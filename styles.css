@@ -979,3 +979,121 @@ button,input,select,textarea{font:inherit}
   }
   .partner-logo-card{flex-basis:140px;width:140px;height:70px}
 }
+
+
+/* ===== CORREÇÃO FINAL DE IMAGENS / PARCEIROS / SERVIÇOS ===== */
+
+/* Banner Parceiros: mostrar todos os logos disponíveis, sem cortar por max-height */
+.partners-hero-logos{
+  display:grid !important;
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  gap:8px !important;
+  max-height:none !important;
+  overflow:visible !important;
+  align-content:center !important;
+}
+.partners-hero-logos img{
+  display:block !important;
+  width:100% !important;
+  aspect-ratio:2 / 1 !important;
+  object-fit:contain !important;
+  background:#fff !important;
+  border-radius:7px !important;
+}
+
+/* Serviços: somente as cores das letras em abóbora */
+.split-card.services .mini,
+.split-card.services h2,
+.split-card.services p,
+.split-card.services figcaption,
+.split-card.services > .split-body > a{
+  color:var(--orange) !important;
+}
+.split-card.services figcaption{
+  background:linear-gradient(transparent,rgba(0,0,0,.88)) !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55);
+}
+
+/* Garante que as imagens apareçam */
+.catalog-mini-grid img,
+.partners-hero-logos img,
+.partner-logo-card img{
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+/* Parceiros abaixo dos serviços: uma única fila */
+.partners-marquee{
+  overflow:hidden !important;
+}
+.partners-marquee-track{
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  gap:14px !important;
+  width:max-content !important;
+}
+.partner-logo-card{
+  flex:0 0 180px !important;
+  width:180px !important;
+  height:90px !important;
+}
+.partner-logo-card img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+}
+
+@media(max-width:1100px){
+  .partners-hero-logos{
+    grid-template-columns:repeat(5,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:760px){
+  .partners-hero-logos{
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  }
+}
+
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+.back-to-top{
+  position:fixed !important;
+  right:24px !important;
+  bottom:150px !important;
+  width:52px !important;
+  height:52px !important;
+  border:none !important;
+  border-radius:50% !important;
+  background:var(--orange) !important;
+  color:#fff !important;
+  font-size:28px !important;
+  font-weight:800 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  cursor:pointer !important;
+  z-index:10050 !important;
+  box-shadow:0 8px 24px rgba(0,0,0,.28) !important;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:opacity .2s ease, transform .2s ease, visibility .2s ease;
+}
+.back-to-top.show{
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:translateY(0) !important;
+}
+.back-to-top:hover{
+  filter:brightness(1.08);
+}
+@media(max-width:640px){
+  .back-to-top{
+    right:16px !important;
+    bottom:140px !important;
+    width:46px !important;
+    height:46px !important;
+    font-size:24px !important;
+  }
+}
