@@ -2450,3 +2450,67 @@ html, body{
   font-size:5px !important;
   line-height:1 !important;
 }
+
+
+/* =========================================================
+   AJUSTES FINAIS ABAIXO DO BANNER — SMARTPHONE
+   NÃO ALTERAR .hero / .exact-hero / carrossel.
+   ========================================================= */
+
+/* 1) PRODUTOS — exibe o nome somente no card Extintores.
+   Os demais nomes já fazem parte das próprias imagens. */
+.split-card.products .catalog-mini-grid figure:first-child{
+  position:relative !important;
+  overflow:hidden !important;
+}
+.split-card.products .catalog-mini-grid figure:first-child figcaption{
+  display:block !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:0 !important;
+  z-index:5 !important;
+  margin:0 !important;
+  padding:5px 8px !important;
+  background:rgba(0,0,0,.72) !important;
+  color:#fff !important;
+  font-weight:800 !important;
+  font-size:clamp(10px,3vw,14px) !important;
+  line-height:1.05 !important;
+  text-transform:uppercase !important;
+  text-align:left !important;
+}
+
+/* 2) SERVIÇOS — todos os cards usam exatamente a mesma caixa.
+   Corrige especificamente Guardião de Piscina e BVI sem tocar no banner. */
+.split-card.services .catalog-mini-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+}
+.split-card.services .catalog-mini-grid figure{
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:1 / 1 !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+  border-radius:8px !important;
+}
+.split-card.services .catalog-mini-grid figure img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  min-width:100% !important;
+  min-height:100% !important;
+  max-width:none !important;
+  max-height:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  transform:none !important;
+  box-sizing:border-box !important;
+}
