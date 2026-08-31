@@ -1,0 +1,271 @@
+
+/* ============================================================
+   COMANDO FIRE — SMARTPHONE RESTAURADO
+   SOMENTE max-width: 640px
+   ============================================================ */
+html,body{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+}
+
+/* HEADER */
+.header{height:68px!important}
+.nav{height:68px!important}
+.brand img{width:145px!important;height:56px!important;object-fit:contain!important}
+.menu-btn{display:block!important}
+
+/* BANNER: compacto, sem invadir a próxima seção */
+.hero.exact-hero,
+.hero.exact-hero .hero-track,
+.hero.exact-hero .hero-slide{
+  height:230px!important;
+  min-height:230px!important;
+  max-height:230px!important;
+  overflow:hidden!important;
+}
+.hero.exact-hero{margin-top:68px!important}
+
+/* SLIDE 1 */
+.exact-option4-picture{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  background:#050505!important;
+}
+.exact-option4-picture img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+
+/* SLIDE 2 — SERVIÇOS / PRODUTOS */
+.service-hero-slide .service-dual-media{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  overflow:hidden!important;
+}
+.service-hero-slide .service-photo{
+  position:absolute!important;
+  top:0!important;
+  bottom:0!important;
+  width:50%!important;
+  height:100%!important;
+  transform:none!important;
+  clip-path:none!important;
+  -webkit-clip-path:none!important;
+  background-size:contain!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-color:#050505!important;
+}
+.service-photo-left{left:0!important;right:auto!important}
+.service-photo-right{left:50%!important;right:auto!important}
+.service-diagonal-divider{
+  position:absolute!important;
+  left:50%!important;
+  top:0!important;
+  bottom:0!important;
+  width:4px!important;
+  height:100%!important;
+  transform:translateX(-50%)!important;
+  clip-path:none!important;
+  -webkit-clip-path:none!important;
+  background:#ff5500!important;
+  z-index:20!important;
+}
+.service-hero-slide::after{display:none!important}
+.service-hero-slide::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0 50% 0 0!important;
+  background:rgba(0,0,0,.42)!important;
+  z-index:3!important;
+}
+.service-hero-slide .hero-inner{
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  padding:8px 8px 18px!important;
+}
+.service-banner-copy{
+  width:43%!important;
+  max-width:43%!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+}
+.service-banner-copy .eyebrow{font-size:.38rem!important}
+.service-banner-copy h1{
+  font-size:.70rem!important;
+  line-height:.94!important;
+  margin:2px 0 4px!important;
+  white-space:normal!important;
+  overflow:visible!important;
+}
+.service-banner-copy p{
+  font-size:.35rem!important;
+  line-height:1.07!important;
+  margin:0!important;
+  overflow:visible!important;
+}
+.service-banner-copy .hero-actions{display:none!important}
+
+/* SLIDE 3 — PARCEIROS: 21 logos em 7 x 3 */
+.partners-hero-slide .hero-art{display:none!important}
+.partners-hero-inner{
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:7px 8px 17px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:3px!important;
+}
+.partners-hero-copy{
+  width:100%!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:0!important;
+}
+.partners-hero-copy .eyebrow{font-size:.31rem!important}
+.partners-hero-copy h1{font-size:.66rem!important;line-height:.9!important;margin:1px 0!important}
+.partners-hero-copy p{font-size:.29rem!important;line-height:1!important;margin:0!important}
+.partners-hero-copy .hero-actions{display:none!important}
+.partners-hero-logos{
+  position:static!important;
+  width:100%!important;
+  height:168px!important;
+  margin:0!important;
+  padding:0!important;
+  display:grid!important;
+  grid-template-columns:repeat(7,minmax(0,1fr))!important;
+  grid-template-rows:repeat(3,minmax(0,1fr))!important;
+  grid-auto-flow:row!important;
+  gap:3px!important;
+  overflow:hidden!important;
+}
+.partners-hero-logos img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:0!important;
+  min-height:0!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#fff!important;
+  padding:2px!important;
+  margin:0!important;
+  border-radius:3px!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+/* SLIDE 4 — GALERIA: 6 quadros completos */
+.gallery-hero-slide .hero-art{display:none!important}
+.gallery-hero-inner{
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:7px 8px 17px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:3px!important;
+}
+.gallery-hero-copy{
+  width:100%!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:0!important;
+}
+.gallery-hero-copy .eyebrow{font-size:.31rem!important}
+.gallery-hero-copy h1{font-size:.67rem!important;line-height:.9!important;margin:1px 0!important}
+.gallery-hero-copy p{font-size:.29rem!important;line-height:1!important;margin:0!important}
+.gallery-hero-copy .hero-actions{display:none!important}
+.gallery-future-grid{
+  position:static!important;
+  width:100%!important;
+  height:168px!important;
+  min-height:168px!important;
+  max-height:168px!important;
+  margin:0!important;
+  padding:0!important;
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  grid-template-rows:repeat(2,minmax(0,1fr))!important;
+  gap:4px!important;
+  overflow:hidden!important;
+  transform:none!important;
+}
+.gallery-future-card,
+.gallery-future-card.g1,.gallery-future-card.g2,.gallery-future-card.g3,
+.gallery-future-card.g4,.gallery-future-card.g5,.gallery-future-card.g6{
+  position:relative!important;
+  inset:auto!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:4px!important;
+  transform:none!important;
+  font-size:.41rem!important;
+}
+
+/* CONTROLES */
+.exact-hero .hero-arrow{
+  width:28px!important;
+  height:28px!important;
+  font-size:18px!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  z-index:60!important;
+}
+.exact-hero .hero-arrow.prev{left:4px!important}
+.exact-hero .hero-arrow.next{right:4px!important}
+.hero-dots{bottom:4px!important;z-index:61!important}
+.hero-dots button{width:16px!important;height:3px!important}
+.hero-dots button.active{width:28px!important}
+
+/* EXTINTORES NO SMARTPHONE */
+.products-mini-grid .extintor-card{
+  position:relative!important;
+}
+.products-mini-grid .extintor-card figcaption{
+  display:block!important;
+  position:absolute!important;
+  left:0!important;
+  right:0!important;
+  bottom:0!important;
+  z-index:100!important;
+  padding:22px 7px 6px!important;
+  background:linear-gradient(transparent,rgba(0,0,0,.94))!important;
+  color:#fff!important;
+  font-family:"Barlow Condensed",sans-serif!important;
+  font-size:.76rem!important;
+  line-height:1!important;
+  font-weight:800!important;
+  text-transform:uppercase!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+@media(max-width:390px){
+  .hero.exact-hero,
+  .hero.exact-hero .hero-track,
+  .hero.exact-hero .hero-slide{
+    height:215px!important;
+    min-height:215px!important;
+    max-height:215px!important;
+  }
+  .partners-hero-logos{height:154px!important}
+  .gallery-future-grid{height:154px!important;min-height:154px!important;max-height:154px!important}
+}
