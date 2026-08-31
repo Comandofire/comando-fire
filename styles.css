@@ -1097,3 +1097,521 @@ button,input,select,textarea{font:inherit}
     font-size:24px !important;
   }
 }
+
+
+/* ============================================================
+   CORREÇÕES FINAIS — MOBILE / CARDS / BANNERS / CONTRASTE
+   ============================================================ */
+
+/* ERRO 1 — mobile sem faixa lateral, cabeçalho estável e banner sem corte */
+html, body{
+  width:100% !important;
+  max-width:100% !important;
+  overflow-x:hidden !important;
+}
+
+body{
+  margin:0 !important;
+}
+
+.header{
+  width:100% !important;
+  max-width:100vw !important;
+}
+
+.nav{
+  width:100% !important;
+  max-width:1180px !important;
+  box-sizing:border-box !important;
+}
+
+.menu-btn{
+  flex:0 0 46px !important;
+  min-width:46px !important;
+  min-height:46px !important;
+  position:relative !important;
+  z-index:1005 !important;
+}
+
+.hero,
+.hero-track,
+.hero-slide{
+  max-width:100vw !important;
+  overflow:hidden !important;
+}
+
+/* Logo maior no desktop */
+.header .brand{
+  width:285px !important;
+}
+.header .brand img{
+  height:82px !important;
+  max-width:100% !important;
+}
+
+/* ERRO 2 — remove texto duplicado por cima das imagens.
+   As imagens já possuem o nome embutido. */
+.catalog-mini-grid figcaption{
+  display:none !important;
+}
+.catalog-mini-grid figure{
+  background:#111 !important;
+}
+.catalog-mini-grid img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+}
+
+/* ERRO 3 — banner Serviços com duas fotos separadas pela faixa diagonal */
+.service-hero-slide{
+  background:#d9d9d9 !important;
+}
+.service-hero-slide::after{
+  background:linear-gradient(
+    90deg,
+    rgba(255,85,0,.96) 0%,
+    rgba(255,85,0,.88) 34%,
+    rgba(255,85,0,.42) 48%,
+    rgba(0,0,0,.10) 54%,
+    rgba(0,0,0,.12) 100%
+  ) !important;
+  z-index:2 !important;
+}
+.service-dual-media{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  overflow:hidden;
+}
+.service-photo{
+  position:absolute;
+  top:0;
+  bottom:0;
+  background-size:cover;
+  background-position:center;
+}
+.service-photo-left{
+  left:0;
+  width:57%;
+  background-image:url("servico-bombeiro.jpg");
+  clip-path:polygon(0 0, 100% 0, 82% 100%, 0 100%);
+}
+.service-photo-right{
+  right:0;
+  width:52%;
+  background-image:url("produto-extintores.jpg");
+  background-position:center 55%;
+  clip-path:polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+}
+.service-diagonal-divider{
+  position:absolute;
+  z-index:4;
+  left:53%;
+  top:-12%;
+  width:34px;
+  height:125%;
+  background:linear-gradient(90deg,#ff7a36 0 38%,#d4d4d4 38% 64%,#fff 64% 100%);
+  transform:skewX(-17deg);
+  box-shadow:0 0 0 1px rgba(255,255,255,.12);
+}
+.service-banner-copy{
+  position:relative;
+  z-index:6 !important;
+  max-width:610px !important;
+  text-shadow:0 2px 13px rgba(0,0,0,.22);
+}
+.service-banner-copy h1,
+.service-banner-copy p,
+.service-banner-copy .eyebrow{
+  color:#fff !important;
+}
+
+/* ERRO 4 — 21 parceiros, exatamente 3 linhas x 7 colunas */
+.partners-hero-inner{
+  grid-template-columns:38% 62% !important;
+  gap:24px !important;
+}
+.partners-hero-copy{
+  max-width:500px !important;
+}
+.partners-hero-copy h1{
+  font-size:clamp(2.7rem,4vw,4.65rem) !important;
+  line-height:.92 !important;
+}
+.partners-hero-copy p{
+  font-size:.96rem !important;
+}
+.partners-hero-logos{
+  display:grid !important;
+  grid-template-columns:repeat(7, minmax(0,1fr)) !important;
+  grid-template-rows:repeat(3, 1fr) !important;
+  gap:10px !important;
+  width:100% !important;
+  max-height:none !important;
+  overflow:visible !important;
+  align-content:center !important;
+}
+.partners-hero-logos img{
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:2/1 !important;
+  object-fit:contain !important;
+  background:#fff !important;
+  border-radius:8px !important;
+  padding:4px !important;
+  box-shadow:0 7px 18px rgba(0,0,0,.13) !important;
+}
+
+/* ERRO 5 — contraste nas áreas claras */
+.about-section,
+.services-section,
+.gallery,
+.jobs,
+.contact{
+  color:#16181c !important;
+}
+.about-section p,
+.services-section p,
+.gallery p,
+.jobs p,
+.contact p,
+.service-card p,
+.about-card p{
+  color:#31343a !important;
+}
+.services-section{
+  background:#f2f3f5 !important;
+}
+.service-card{
+  background:#fff !important;
+  color:#111 !important;
+  border:1px solid #d4d7dc !important;
+  box-shadow:0 7px 18px rgba(0,0,0,.06) !important;
+}
+.service-card h3,
+.service-card strong{
+  color:#111 !important;
+}
+.service-card .number,
+.service-card a{
+  color:var(--orange) !important;
+}
+.section-heading h2,
+.section-heading h3,
+.section-heading p{
+  text-shadow:none !important;
+}
+
+/* Botão subir — acima de WhatsApp/Instagram e sempre visível quando ativado */
+.back-to-top{
+  position:fixed !important;
+  right:24px !important;
+  bottom:170px !important;
+  width:52px !important;
+  height:52px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border:0 !important;
+  border-radius:50% !important;
+  background:#ff5500 !important;
+  color:#fff !important;
+  font-size:28px !important;
+  font-weight:900 !important;
+  z-index:20000 !important;
+  box-shadow:0 8px 26px rgba(0,0,0,.30) !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+  transform:translateY(8px) !important;
+  transition:.2s ease !important;
+}
+.back-to-top.show{
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
+  transform:none !important;
+}
+
+/* ERRO 6 — painel futurista para Galeria */
+.gallery-hero-inner{
+  display:grid !important;
+  grid-template-columns:38% 62% !important;
+  gap:36px !important;
+  align-items:center !important;
+}
+.gallery-hero-copy{
+  width:100% !important;
+  max-width:510px !important;
+}
+.gallery-hero-copy h1{
+  font-size:clamp(3.1rem,4.8vw,5.6rem) !important;
+}
+.gallery-future-grid{
+  position:relative;
+  z-index:4;
+  height:78%;
+  min-height:330px;
+  display:grid;
+  grid-template-columns:1.25fr .8fr 1fr;
+  grid-template-rows:1fr .86fr;
+  gap:12px;
+  transform:skewX(-4deg);
+}
+.gallery-future-card{
+  position:relative;
+  overflow:hidden;
+  border:2px solid rgba(255,85,0,.62);
+  border-radius:14px;
+  background:#151515;
+  box-shadow:0 12px 32px rgba(0,0,0,.18);
+}
+.gallery-future-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(145deg,transparent 55%,rgba(255,85,0,.20));
+  pointer-events:none;
+}
+.gallery-future-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform:skewX(4deg) scale(1.06);
+}
+.gallery-future-card.g1{
+  grid-column:1;
+  grid-row:1 / span 2;
+}
+.gallery-future-card.g2{
+  grid-column:2;
+  grid-row:1;
+}
+.gallery-future-card.g3{
+  grid-column:3;
+  grid-row:1;
+}
+.gallery-future-card.g4{
+  grid-column:2;
+  grid-row:2;
+}
+.gallery-future-card.g5{
+  grid-column:3;
+  grid-row:2;
+}
+
+/* MOBILE */
+@media(max-width:980px){
+  .header .brand{
+    width:225px !important;
+  }
+  .header .brand img{
+    height:68px !important;
+  }
+
+  .menu{
+    left:10px !important;
+    right:10px !important;
+    width:auto !important;
+    max-width:calc(100vw - 20px) !important;
+    box-sizing:border-box !important;
+    overflow-y:auto !important;
+    max-height:calc(100vh - 92px) !important;
+  }
+
+  .partners-hero-inner{
+    grid-template-columns:34% 66% !important;
+    gap:12px !important;
+  }
+  .partners-hero-logos{
+    grid-template-columns:repeat(7,1fr) !important;
+    gap:5px !important;
+  }
+  .partners-hero-copy h1{
+    font-size:clamp(2.05rem,5vw,3.4rem) !important;
+  }
+
+  .gallery-hero-inner{
+    grid-template-columns:39% 61% !important;
+    gap:18px !important;
+  }
+  .gallery-future-grid{
+    min-height:280px !important;
+    gap:8px !important;
+  }
+}
+
+@media(max-width:640px){
+  html{
+    overflow-x:hidden !important;
+  }
+  body{
+    min-width:0 !important;
+    overflow-x:hidden !important;
+  }
+
+  .header{
+    height:74px !important;
+  }
+  .nav{
+    height:74px !important;
+    padding-left:12px !important;
+    padding-right:12px !important;
+    gap:10px !important;
+  }
+  .header .brand{
+    width:175px !important;
+    max-width:calc(100vw - 80px) !important;
+    flex:0 1 175px !important;
+  }
+  .header .brand img{
+    height:58px !important;
+  }
+  .menu-btn{
+    display:block !important;
+    margin-left:auto !important;
+    background:#111 !important;
+    border:1px solid rgba(255,255,255,.18) !important;
+  }
+
+  .menu{
+    top:74px !important;
+    left:8px !important;
+    right:8px !important;
+    max-width:calc(100vw - 16px) !important;
+    background:#080808 !important;
+  }
+  .menu a{
+    color:#fff !important;
+  }
+
+  /* banner sempre começa abaixo do cabeçalho */
+  .hero.exact-hero{
+    margin-top:74px !important;
+    width:100vw !important;
+    max-width:100vw !important;
+  }
+  .hero-slide{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  /* Evita corte de títulos nos slides mobile */
+  .hero-slide:not(.exact-option4-slide) .hero-inner{
+    padding:22px 18px 32px !important;
+    box-sizing:border-box !important;
+    align-items:center !important;
+  }
+  .hero-slide:not(.exact-option4-slide) .hero-copy{
+    width:58% !important;
+    max-width:58% !important;
+    min-height:0 !important;
+  }
+  .hero-slide:not(.exact-option4-slide) h1{
+    font-size:clamp(2.05rem,9vw,3.4rem) !important;
+    line-height:.91 !important;
+    overflow:visible !important;
+  }
+  .hero-slide:not(.exact-option4-slide) p{
+    font-size:.86rem !important;
+    line-height:1.35 !important;
+  }
+  .hero-slide:not(.exact-option4-slide) .hero-actions{
+    margin-top:12px !important;
+    padding-top:0 !important;
+    min-height:0 !important;
+  }
+
+  .service-photo-left{
+    width:64% !important;
+  }
+  .service-photo-right{
+    width:50% !important;
+  }
+  .service-diagonal-divider{
+    left:57% !important;
+    width:24px !important;
+  }
+
+  /* 3x7 permanece no banner parceiros; logos maiores, texto menor */
+  .partners-hero-inner{
+    grid-template-columns:31% 69% !important;
+    gap:8px !important;
+    padding-left:12px !important;
+    padding-right:12px !important;
+  }
+  .partners-hero-copy{
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .partners-hero-copy h1{
+    font-size:1.72rem !important;
+    line-height:.91 !important;
+  }
+  .partners-hero-copy p{
+    font-size:.68rem !important;
+    line-height:1.25 !important;
+  }
+  .partners-hero-copy .hero-actions{
+    display:none !important;
+  }
+  .partners-hero-logos{
+    position:static !important;
+    width:100% !important;
+    grid-template-columns:repeat(7,1fr) !important;
+    grid-template-rows:repeat(3,1fr) !important;
+    gap:3px !important;
+  }
+  .partners-hero-logos img{
+    padding:1px !important;
+    border-radius:4px !important;
+  }
+
+  .gallery-hero-inner{
+    grid-template-columns:38% 62% !important;
+    gap:8px !important;
+    padding:18px 12px !important;
+  }
+  .gallery-hero-copy{
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .gallery-hero-copy h1{
+    font-size:2.05rem !important;
+  }
+  .gallery-hero-copy p{
+    font-size:.72rem !important;
+  }
+  .gallery-future-grid{
+    height:70% !important;
+    min-height:225px !important;
+    gap:4px !important;
+  }
+  .gallery-future-card{
+    border-width:1px !important;
+    border-radius:7px !important;
+  }
+
+  .back-to-top{
+    right:16px !important;
+    bottom:150px !important;
+    width:48px !important;
+    height:48px !important;
+  }
+
+  /* Impede qualquer elemento de criar a faixa branca à direita */
+  main,
+  section,
+  .container,
+  .split-wrap,
+  .split-card,
+  .partners-marquee,
+  .gallery,
+  .services-section{
+    max-width:100vw !important;
+    box-sizing:border-box !important;
+  }
+}
