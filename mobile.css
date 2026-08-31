@@ -1,39 +1,37 @@
+/* ============================================================
+   COMANDO FIRE — MOBILE LIMPO
+   SOMENTE SMARTPHONE (carregado pelo media do index.html)
+   Desktop não recebe nenhuma regra deste arquivo.
+   ============================================================ */
 
-/* =========================================================
-   COMANDO FIRE — MOBILE.CSS
-   SOMENTE SMARTPHONE
-   Carregado depois de styles.css e limitado a max-width 640px.
-   O desktop não recebe nenhuma destas regras.
-   ========================================================= */
-
-html, body{
-  width:100%;
-  max-width:100%;
-  overflow-x:hidden;
+html,body{
+  width:100% !important;
+  max-width:100% !important;
+  overflow-x:hidden !important;
 }
 
-/* BANNER MOBILE COMPACTO */
-.hero.exact-hero{
-  height:340px !important;
-  min-height:340px !important;
-  max-height:340px !important;
-  overflow:hidden !important;
-}
-
+/* O banner anterior tinha 340px CSS, que no aparelho ficava visualmente enorme.
+   Agora ele fica compacto. */
+.hero.exact-hero,
 .hero.exact-hero .hero-track,
 .hero.exact-hero .hero-slide{
-  height:340px !important;
-  min-height:340px !important;
-  max-height:340px !important;
+  height:245px !important;
+  min-height:245px !important;
+  max-height:245px !important;
+}
+
+.hero.exact-hero{
+  margin-top:74px !important;
+  overflow:hidden !important;
 }
 
 .hero.exact-hero .hero-slide{
   overflow:hidden !important;
 }
 
-/* 1 — BANNER PRINCIPAL: IMAGEM INTEIRA */
+/* ---------- SLIDE 1: IMAGEM PRINCIPAL INTEIRA ---------- */
 .exact-option4-slide{
-  background:#0b0b0b !important;
+  background:#050505 !important;
 }
 
 .exact-option4-picture{
@@ -44,7 +42,7 @@ html, body{
   display:flex !important;
   align-items:center !important;
   justify-content:center !important;
-  background:#0b0b0b !important;
+  background:#050505 !important;
 }
 
 .exact-option4-picture img{
@@ -53,20 +51,27 @@ html, body{
   max-width:100% !important;
   max-height:100% !important;
   object-fit:contain !important;
-  object-position:center !important;
-  display:block !important;
+  object-position:center center !important;
 }
 
-/* 2 — SERVIÇOS / PRODUTOS: 50/50 E DIVISÃO RETA */
-.service-hero-slide .service-dual-media{
+/* ---------- SLIDE 2: SERVIÇO | PRODUTO, LINHA RETA ---------- */
+.service-hero-slide{
+  background:#050505 !important;
+}
+
+.service-hero-slide::after{
+  display:none !important;
+}
+
+.service-dual-media{
   position:absolute !important;
   inset:0 !important;
-  width:100% !important;
-  height:100% !important;
   overflow:hidden !important;
+  background:#050505 !important;
 }
 
-.service-hero-slide .service-photo{
+.service-photo-left,
+.service-photo-right{
   position:absolute !important;
   top:0 !important;
   bottom:0 !important;
@@ -75,78 +80,75 @@ html, body{
   clip-path:none !important;
   -webkit-clip-path:none !important;
   transform:none !important;
-  background-size:contain !important;
   background-repeat:no-repeat !important;
-  background-position:center !important;
+  background-size:contain !important;
+  background-position:center center !important;
 }
 
-.service-hero-slide .service-photo-left{
+.service-photo-left{
   left:0 !important;
   right:auto !important;
 }
 
-.service-hero-slide .service-photo-right{
+.service-photo-right{
   left:50% !important;
   right:auto !important;
 }
 
-.service-hero-slide .service-diagonal-divider{
+.service-diagonal-divider{
   position:absolute !important;
+  left:50% !important;
   top:0 !important;
   bottom:0 !important;
-  left:calc(50% - 2px) !important;
   width:4px !important;
   height:100% !important;
-  transform:none !important;
+  transform:translateX(-50%) !important;
   clip-path:none !important;
   -webkit-clip-path:none !important;
-  background:linear-gradient(
-    to right,
-    #ff5500 0 34%,
-    #c0c0c0 34% 67%,
-    #ffffff 67% 100%
-  ) !important;
-  z-index:7 !important;
+  background:linear-gradient(to right,#ff5500 0 34%,#c0c0c0 34% 67%,#fff 67% 100%) !important;
+  z-index:12 !important;
 }
 
 .service-hero-slide::before{
   content:"" !important;
   position:absolute !important;
   inset:0 50% 0 0 !important;
-  background:linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.18)) !important;
+  background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.18)) !important;
   z-index:4 !important;
   pointer-events:none !important;
 }
 
 .service-hero-slide .hero-inner{
   position:relative !important;
-  z-index:8 !important;
+  z-index:10 !important;
+  width:100% !important;
   height:100% !important;
-  padding:18px 14px 36px !important;
+  padding:12px 10px 26px !important;
   display:flex !important;
   align-items:center !important;
 }
 
 .service-banner-copy{
-  width:44% !important;
-  max-width:44% !important;
-  margin:0 !important;
+  width:46% !important;
+  max-width:46% !important;
   padding:0 !important;
+  margin:0 !important;
 }
 
 .service-banner-copy .eyebrow{
-  font-size:.62rem !important;
+  font-size:.48rem !important;
+  letter-spacing:.15em !important;
 }
 
 .service-banner-copy h1{
-  font-size:1.35rem !important;
-  line-height:.94 !important;
-  margin:5px 0 8px !important;
+  font-size:1.05rem !important;
+  line-height:.92 !important;
+  margin:4px 0 6px !important;
 }
 
 .service-banner-copy p{
-  font-size:.62rem !important;
-  line-height:1.22 !important;
+  font-size:.50rem !important;
+  line-height:1.18 !important;
   margin:0 !important;
 }
 
@@ -154,38 +156,44 @@ html, body{
   display:none !important;
 }
 
-/* 3 — PARCEIROS: TEXTO EM CIMA + LOGOS GRANDES EM FAIXA */
-.partners-hero-slide .hero-inner{
+/* ---------- SLIDE 3: PARCEIROS ---------- */
+.partners-hero-slide .hero-art{
+  display:block !important;
+}
+
+.partners-hero-slide .hero-inner,
+.partners-hero-inner{
+  width:100% !important;
   height:100% !important;
-  padding:14px 14px 34px !important;
   display:flex !important;
   flex-direction:column !important;
   align-items:stretch !important;
   justify-content:flex-start !important;
-  gap:7px !important;
+  gap:4px !important;
+  padding:10px 10px 24px !important;
 }
 
 .partners-hero-copy{
   width:100% !important;
   max-width:100% !important;
-  flex:none !important;
+  flex:0 0 auto !important;
   padding:0 !important;
   margin:0 !important;
 }
 
 .partners-hero-copy .eyebrow{
-  font-size:.58rem !important;
+  font-size:.48rem !important;
 }
 
 .partners-hero-copy h1{
-  font-size:1.35rem !important;
-  line-height:.93 !important;
-  margin:2px 0 4px !important;
+  font-size:1.03rem !important;
+  line-height:.90 !important;
+  margin:1px 0 2px !important;
 }
 
 .partners-hero-copy p{
-  font-size:.62rem !important;
-  line-height:1.16 !important;
+  font-size:.50rem !important;
+  line-height:1.12 !important;
   margin:0 !important;
 }
 
@@ -194,68 +202,77 @@ html, body{
 }
 
 .partners-hero-logos{
+  position:static !important;
   width:100% !important;
   max-width:100% !important;
+  height:140px !important;
   display:grid !important;
-  grid-template-rows:repeat(2,88px) !important;
+  grid-template-rows:repeat(2,66px) !important;
   grid-auto-flow:column !important;
-  grid-auto-columns:88px !important;
-  gap:7px !important;
+  grid-auto-columns:66px !important;
+  grid-template-columns:none !important;
+  gap:5px !important;
   overflow-x:auto !important;
   overflow-y:hidden !important;
-  padding:2px 1px 5px !important;
+  padding:1px 0 3px !important;
   margin:0 !important;
   scroll-snap-type:x proximity !important;
   -webkit-overflow-scrolling:touch !important;
 }
 
 .partners-hero-logos img{
-  width:88px !important;
-  height:88px !important;
-  min-width:88px !important;
-  min-height:88px !important;
-  aspect-ratio:1/1 !important;
-  object-fit:contain !important;
+  display:block !important;
+  width:66px !important;
+  height:66px !important;
+  min-width:66px !important;
+  min-height:66px !important;
+  max-width:66px !important;
+  max-height:66px !important;
+  object-fit:cover !important;
   object-position:center !important;
   background:#fff !important;
-  padding:5px !important;
-  border-radius:8px !important;
+  padding:0 !important;
+  border-radius:7px !important;
   box-sizing:border-box !important;
+  opacity:1 !important;
+  visibility:visible !important;
   scroll-snap-align:start !important;
 }
 
-/* 4 — GALERIA: TEXTO EM CIMA + 6 QUADROS INTEIROS */
-.gallery-hero-slide .hero-inner{
+/* ---------- SLIDE 4: GALERIA ---------- */
+.gallery-hero-slide .hero-inner,
+.gallery-hero-inner{
+  width:100% !important;
   height:100% !important;
-  padding:14px 14px 34px !important;
   display:flex !important;
   flex-direction:column !important;
   align-items:stretch !important;
   justify-content:flex-start !important;
-  gap:8px !important;
+  gap:4px !important;
+  padding:10px 10px 24px !important;
 }
 
 .gallery-hero-copy{
   width:100% !important;
   max-width:100% !important;
-  flex:none !important;
+  flex:0 0 auto !important;
   padding:0 !important;
   margin:0 !important;
 }
 
 .gallery-hero-copy .eyebrow{
-  font-size:.58rem !important;
+  font-size:.48rem !important;
 }
 
 .gallery-hero-copy h1{
-  font-size:1.35rem !important;
-  line-height:.93 !important;
-  margin:2px 0 4px !important;
+  font-size:1.03rem !important;
+  line-height:.90 !important;
+  margin:1px 0 2px !important;
 }
 
 .gallery-hero-copy p{
-  font-size:.62rem !important;
-  line-height:1.16 !important;
+  font-size:.50rem !important;
+  line-height:1.12 !important;
   margin:0 !important;
 }
 
@@ -264,52 +281,73 @@ html, body{
 }
 
 .gallery-future-grid{
-  position:relative !important;
-  inset:auto !important;
+  position:static !important;
   width:100% !important;
   max-width:100% !important;
-  height:205px !important;
-  min-height:205px !important;
-  margin:0 !important;
+  height:145px !important;
+  min-height:145px !important;
+  max-height:145px !important;
   display:grid !important;
-  grid-template-columns:repeat(3,1fr) !important;
-  grid-template-rows:repeat(2,1fr) !important;
-  gap:7px !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  grid-template-rows:repeat(2,minmax(0,1fr)) !important;
+  gap:5px !important;
+  margin:0 !important;
   transform:none !important;
 }
 
-.gallery-future-card{
+.gallery-future-card,
+.gallery-future-card.g1,
+.gallery-future-card.g2,
+.gallery-future-card.g3,
+.gallery-future-card.g4,
+.gallery-future-card.g5,
+.gallery-future-card.g6{
   position:relative !important;
   inset:auto !important;
+  top:auto !important;
+  right:auto !important;
+  bottom:auto !important;
+  left:auto !important;
   width:auto !important;
   height:auto !important;
   min-width:0 !important;
   min-height:0 !important;
+  margin:0 !important;
   transform:none !important;
 }
 
-/* CONTROLES DENTRO DA TELA */
-.exact-hero .hero-arrow,
-.hero-prev,
-.hero-next{
-  width:36px !important;
-  height:36px !important;
+/* ---------- NAVEGAÇÃO DO BANNER ---------- */
+.exact-hero .hero-arrow{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:30px !important;
+  height:30px !important;
   top:50% !important;
   transform:translateY(-50%) !important;
-  z-index:30 !important;
+  font-size:1.45rem !important;
+  z-index:50 !important;
 }
 
-.exact-hero .hero-arrow.prev,
-.hero-prev{
-  left:6px !important;
-}
-
-.exact-hero .hero-arrow.next,
-.hero-next{
-  right:6px !important;
-}
+.exact-hero .hero-arrow.prev{left:4px !important;}
+.exact-hero .hero-arrow.next{right:4px !important;}
 
 .hero-dots{
-  bottom:7px !important;
-  z-index:31 !important;
+  bottom:5px !important;
+  z-index:51 !important;
+}
+
+.hero-dots button{
+  width:20px !important;
+  height:3px !important;
+}
+
+.hero-dots button.active{
+  width:34px !important;
+}
+
+/* ---------- EXTINTORES: MESMA ESCALA VISUAL NO MOBILE ---------- */
+.products-mini-grid .produto-extintor-card .produto-extintor-label{
+  font-size:.88rem !important;
+  padding:6px 8px 5px !important;
 }
