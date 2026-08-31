@@ -2350,3 +2350,258 @@ body{
     box-sizing:border-box !important;
   }
 }
+
+
+/* ============================================================
+   CORREÇÃO FINAL — BANNER SMARTPHONE SOMENTE
+   Não altera o desktop.
+   ============================================================ */
+@media (max-width: 640px){
+
+  /* Banner/carrossel: altura mobile controlada */
+  .hero.exact-hero,
+  .hero.exact-hero .hero-track,
+  .hero.exact-hero .hero-slide{
+    height: 560px !important;
+    min-height: 560px !important;
+    max-height: 560px !important;
+  }
+
+  .hero.exact-hero{
+    overflow: hidden !important;
+  }
+
+  .hero-slide{
+    overflow: hidden !important;
+  }
+
+  /* Controles sempre dentro do banner */
+  .hero-prev,
+  .hero-next{
+    width: 48px !important;
+    height: 48px !important;
+    top: 52% !important;
+    transform: translateY(-50%) !important;
+    z-index: 20 !important;
+  }
+
+  .hero-prev{ left: 10px !important; }
+  .hero-next{ right: 10px !important; }
+
+  .hero-dots{
+    bottom: 12px !important;
+    z-index: 21 !important;
+  }
+
+  /* ------------------------------------------------------------
+     SLIDE 1 / FOTO PRINCIPAL
+     ------------------------------------------------------------ */
+  .hero-slide:first-child .hero-art,
+  .hero-slide:first-child .art-1{
+    background-position: 62% center !important;
+    background-size: cover !important;
+  }
+
+  .hero-slide:first-child .hero-inner{
+    padding: 26px 18px 58px !important;
+    align-items: end !important;
+  }
+
+  /* ------------------------------------------------------------
+     SERVIÇOS + PRODUTOS — DIVISÃO RETA NO SMARTPHONE
+     ------------------------------------------------------------ */
+  .service-hero-slide .service-dual-media{
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+  }
+
+  .service-hero-slide .service-photo{
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 50% !important;
+    height: 100% !important;
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+    transform: none !important;
+  }
+
+  .service-hero-slide .service-photo-left{
+    left: 0 !important;
+    right: auto !important;
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  .service-hero-slide .service-photo-right{
+    left: 50% !important;
+    right: auto !important;
+    background-position: center !important;
+    background-size: cover !important;
+  }
+
+  .service-hero-slide .service-diagonal-divider{
+    position: absolute !important;
+    left: calc(50% - 3px) !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 6px !important;
+    height: 100% !important;
+    transform: none !important;
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+    background:
+      linear-gradient(
+        to right,
+        #FF5500 0 33%,
+        #C0C0C0 33% 66%,
+        #FFFFFF 66% 100%
+      ) !important;
+    z-index: 6 !important;
+  }
+
+  .service-hero-slide::before{
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 50% 0 0 !important;
+    background: linear-gradient(90deg, rgba(0,0,0,.80), rgba(0,0,0,.35)) !important;
+    z-index: 4 !important;
+    pointer-events: none !important;
+  }
+
+  .service-hero-slide .hero-inner{
+    position: relative !important;
+    z-index: 8 !important;
+    display: block !important;
+    padding: 34px 18px 58px !important;
+  }
+
+  .service-banner-copy{
+    width: 44% !important;
+    max-width: 44% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .service-banner-copy h1{
+    font-size: 2rem !important;
+    line-height: .95 !important;
+    margin: 0 0 14px !important;
+  }
+
+  .service-banner-copy p{
+    font-size: .82rem !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+  }
+
+  /* ------------------------------------------------------------
+     PARCEIROS — LAYOUT MOBILE PRÓPRIO
+     ------------------------------------------------------------ */
+  .partners-hero-slide .hero-inner{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    padding: 22px 18px 52px !important;
+  }
+
+  .partners-hero-copy{
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+  }
+
+  .partners-hero-copy h1{
+    font-size: 2rem !important;
+    line-height: .92 !important;
+    margin: 0 0 6px !important;
+  }
+
+  .partners-hero-copy p{
+    font-size: .82rem !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    max-width: 96% !important;
+  }
+
+  .partners-hero-logos{
+    display: grid !important;
+    grid-template-rows: repeat(2, 96px) !important;
+    grid-auto-flow: column !important;
+    grid-auto-columns: 96px !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 4px 2px 10px !important;
+    margin: 2px 0 0 !important;
+    scroll-snap-type: x proximity !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .partners-hero-logos img{
+    width: 96px !important;
+    height: 96px !important;
+    min-width: 96px !important;
+    min-height: 96px !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #fff !important;
+    padding: 8px !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+    scroll-snap-align: start !important;
+    box-shadow: 0 6px 16px rgba(0,0,0,.12) !important;
+  }
+
+  /* ------------------------------------------------------------
+     GALERIA — TÍTULO EM CIMA / QUADROS EMBAIXO
+     ------------------------------------------------------------ */
+  .gallery-hero-slide .hero-inner{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    padding: 22px 18px 52px !important;
+  }
+
+  .gallery-hero-slide .hero-copy{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .gallery-hero-slide .hero-copy h1{
+    font-size: 2rem !important;
+    line-height: .92 !important;
+    margin: 0 0 8px !important;
+  }
+
+  .gallery-hero-slide .hero-copy p{
+    font-size: .82rem !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .gallery-future-grid{
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  /* Evita qualquer estouro lateral */
+  html, body{
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}
