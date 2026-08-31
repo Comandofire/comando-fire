@@ -2161,3 +2161,72 @@ body{
     padding:4px !important;
   }
 }
+
+
+/* =========================================================
+   BANNERS HOMOGÊNEOS — DESKTOP
+   Mesmo layout visual em Início / Serviços / Parceiros / Galeria.
+   As medidas abaixo pertencem SOMENTE ao desktop.css.
+   ========================================================= */
+.hero.exact-hero,
+.hero.exact-hero .hero-track,
+.hero.exact-hero .hero-slide{
+  height:clamp(430px, 37.695vw, 579px) !important;
+  min-height:0 !important;
+  max-height:579px !important;
+}
+
+/* Todos os slides ocupam exatamente a mesma caixa */
+.hero.exact-hero .hero-slide{
+  position:absolute !important;
+  inset:0 !important;
+  overflow:hidden !important;
+}
+
+/* Mesma direção e alinhamento visual do conteúdo */
+.hero-slide:not(.exact-option4-slide) .hero-inner{
+  height:100% !important;
+  display:flex !important;
+  align-items:center !important;
+}
+
+.hero-slide:not(.exact-option4-slide) .hero-copy{
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+  text-align:left !important;
+  height:100% !important;
+  max-width:560px !important;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+}
+
+/* Todos os botões seguem a mesma direção: esquerda -> direita */
+.hero-slide:not(.exact-option4-slide) .hero-actions{
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:12px !important;
+  margin-top:20px !important;
+}
+
+/* Parceiros mantém texto do mesmo lado e logos do lado oposto */
+.partners-hero-inner{
+  height:100% !important;
+  align-items:center !important;
+}
+.partners-hero-copy{
+  align-items:flex-start !important;
+  text-align:left !important;
+}
+
+/* Setas e indicadores iguais em todas as abas */
+.hero.exact-hero .hero-arrow{
+  top:50% !important;
+  transform:translateY(-50%) !important;
+}
+.hero.exact-hero .hero-dots{
+  bottom:18px !important;
+}
