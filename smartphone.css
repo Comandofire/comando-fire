@@ -2595,3 +2595,42 @@ html, body{
   visibility:visible !important;
   pointer-events:auto !important;
 }
+/* COMANDO FIRE — CORREÇÃO SOMENTE GUARDIÃO DE PISCINA + BVI
+   Cole ESTE BLOCO NO FINAL do smartphone.css.
+   Não altera banner, produtos, extintores ou outras imagens. */
+
+.services-mini-grid figure:nth-child(3),
+.services-mini-grid figure:nth-child(4){
+  position:relative !important;
+  width:100% !important;
+  aspect-ratio:1 / 1 !important;
+  height:auto !important;
+  overflow:hidden !important;
+  background:transparent !important;
+}
+
+.services-mini-grid figure:nth-child(3) img,
+.services-mini-grid figure:nth-child(4) img{
+  position:static !important;
+  inset:auto !important;
+  left:auto !important;
+  top:auto !important;
+
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:100% !important;
+  max-height:100% !important;
+
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+
+  object-fit:cover !important;
+  object-position:center center !important;
+
+  transform:none !important;
+}
