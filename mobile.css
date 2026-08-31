@@ -1,0 +1,315 @@
+
+/* =========================================================
+   COMANDO FIRE — MOBILE.CSS
+   SOMENTE SMARTPHONE
+   Carregado depois de styles.css e limitado a max-width 640px.
+   O desktop não recebe nenhuma destas regras.
+   ========================================================= */
+
+html, body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+/* BANNER MOBILE COMPACTO */
+.hero.exact-hero{
+  height:340px !important;
+  min-height:340px !important;
+  max-height:340px !important;
+  overflow:hidden !important;
+}
+
+.hero.exact-hero .hero-track,
+.hero.exact-hero .hero-slide{
+  height:340px !important;
+  min-height:340px !important;
+  max-height:340px !important;
+}
+
+.hero.exact-hero .hero-slide{
+  overflow:hidden !important;
+}
+
+/* 1 — BANNER PRINCIPAL: IMAGEM INTEIRA */
+.exact-option4-slide{
+  background:#0b0b0b !important;
+}
+
+.exact-option4-picture{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#0b0b0b !important;
+}
+
+.exact-option4-picture img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  display:block !important;
+}
+
+/* 2 — SERVIÇOS / PRODUTOS: 50/50 E DIVISÃO RETA */
+.service-hero-slide .service-dual-media{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  overflow:hidden !important;
+}
+
+.service-hero-slide .service-photo{
+  position:absolute !important;
+  top:0 !important;
+  bottom:0 !important;
+  width:50% !important;
+  height:100% !important;
+  clip-path:none !important;
+  -webkit-clip-path:none !important;
+  transform:none !important;
+  background-size:contain !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
+}
+
+.service-hero-slide .service-photo-left{
+  left:0 !important;
+  right:auto !important;
+}
+
+.service-hero-slide .service-photo-right{
+  left:50% !important;
+  right:auto !important;
+}
+
+.service-hero-slide .service-diagonal-divider{
+  position:absolute !important;
+  top:0 !important;
+  bottom:0 !important;
+  left:calc(50% - 2px) !important;
+  width:4px !important;
+  height:100% !important;
+  transform:none !important;
+  clip-path:none !important;
+  -webkit-clip-path:none !important;
+  background:linear-gradient(
+    to right,
+    #ff5500 0 34%,
+    #c0c0c0 34% 67%,
+    #ffffff 67% 100%
+  ) !important;
+  z-index:7 !important;
+}
+
+.service-hero-slide::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 50% 0 0 !important;
+  background:linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.18)) !important;
+  z-index:4 !important;
+  pointer-events:none !important;
+}
+
+.service-hero-slide .hero-inner{
+  position:relative !important;
+  z-index:8 !important;
+  height:100% !important;
+  padding:18px 14px 36px !important;
+  display:flex !important;
+  align-items:center !important;
+}
+
+.service-banner-copy{
+  width:44% !important;
+  max-width:44% !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.service-banner-copy .eyebrow{
+  font-size:.62rem !important;
+}
+
+.service-banner-copy h1{
+  font-size:1.35rem !important;
+  line-height:.94 !important;
+  margin:5px 0 8px !important;
+}
+
+.service-banner-copy p{
+  font-size:.62rem !important;
+  line-height:1.22 !important;
+  margin:0 !important;
+}
+
+.service-banner-copy .hero-actions{
+  display:none !important;
+}
+
+/* 3 — PARCEIROS: TEXTO EM CIMA + LOGOS GRANDES EM FAIXA */
+.partners-hero-slide .hero-inner{
+  height:100% !important;
+  padding:14px 14px 34px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:stretch !important;
+  justify-content:flex-start !important;
+  gap:7px !important;
+}
+
+.partners-hero-copy{
+  width:100% !important;
+  max-width:100% !important;
+  flex:none !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.partners-hero-copy .eyebrow{
+  font-size:.58rem !important;
+}
+
+.partners-hero-copy h1{
+  font-size:1.35rem !important;
+  line-height:.93 !important;
+  margin:2px 0 4px !important;
+}
+
+.partners-hero-copy p{
+  font-size:.62rem !important;
+  line-height:1.16 !important;
+  margin:0 !important;
+}
+
+.partners-hero-copy .hero-actions{
+  display:none !important;
+}
+
+.partners-hero-logos{
+  width:100% !important;
+  max-width:100% !important;
+  display:grid !important;
+  grid-template-rows:repeat(2,88px) !important;
+  grid-auto-flow:column !important;
+  grid-auto-columns:88px !important;
+  gap:7px !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  padding:2px 1px 5px !important;
+  margin:0 !important;
+  scroll-snap-type:x proximity !important;
+  -webkit-overflow-scrolling:touch !important;
+}
+
+.partners-hero-logos img{
+  width:88px !important;
+  height:88px !important;
+  min-width:88px !important;
+  min-height:88px !important;
+  aspect-ratio:1/1 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  background:#fff !important;
+  padding:5px !important;
+  border-radius:8px !important;
+  box-sizing:border-box !important;
+  scroll-snap-align:start !important;
+}
+
+/* 4 — GALERIA: TEXTO EM CIMA + 6 QUADROS INTEIROS */
+.gallery-hero-slide .hero-inner{
+  height:100% !important;
+  padding:14px 14px 34px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:stretch !important;
+  justify-content:flex-start !important;
+  gap:8px !important;
+}
+
+.gallery-hero-copy{
+  width:100% !important;
+  max-width:100% !important;
+  flex:none !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.gallery-hero-copy .eyebrow{
+  font-size:.58rem !important;
+}
+
+.gallery-hero-copy h1{
+  font-size:1.35rem !important;
+  line-height:.93 !important;
+  margin:2px 0 4px !important;
+}
+
+.gallery-hero-copy p{
+  font-size:.62rem !important;
+  line-height:1.16 !important;
+  margin:0 !important;
+}
+
+.gallery-hero-copy .hero-actions{
+  display:none !important;
+}
+
+.gallery-future-grid{
+  position:relative !important;
+  inset:auto !important;
+  width:100% !important;
+  max-width:100% !important;
+  height:205px !important;
+  min-height:205px !important;
+  margin:0 !important;
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  grid-template-rows:repeat(2,1fr) !important;
+  gap:7px !important;
+  transform:none !important;
+}
+
+.gallery-future-card{
+  position:relative !important;
+  inset:auto !important;
+  width:auto !important;
+  height:auto !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  transform:none !important;
+}
+
+/* CONTROLES DENTRO DA TELA */
+.exact-hero .hero-arrow,
+.hero-prev,
+.hero-next{
+  width:36px !important;
+  height:36px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  z-index:30 !important;
+}
+
+.exact-hero .hero-arrow.prev,
+.hero-prev{
+  left:6px !important;
+}
+
+.exact-hero .hero-arrow.next,
+.hero-next{
+  right:6px !important;
+}
+
+.hero-dots{
+  bottom:7px !important;
+  z-index:31 !important;
+}
