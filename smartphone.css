@@ -2453,36 +2453,53 @@ html, body{
 
 
 /* =========================================================
-   AJUSTE FINAL — SOMENTE SERVIÇOS + BOTÃO SUBIR
-   NÃO ALTERA O BANNER/CARROSSEL.
+   AJUSTES FINAIS ABAIXO DO BANNER — SMARTPHONE
+   NÃO ALTERAR .hero / .exact-hero / carrossel.
    ========================================================= */
 
-/* SERVIÇOS: remove faixas brancas internas e centraliza as fotos
-   na mesma lógica visual dos cards de Produtos. */
-.split-card.services .catalog-mini-grid{
-  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-  gap:10px !important;
-  align-items:stretch !important;
+/* 1) PRODUTOS — exibe o nome somente no card Extintores.
+   Os demais nomes já fazem parte das próprias imagens. */
+.split-card.products .catalog-mini-grid figure:first-child{
+  position:relative !important;
+  overflow:hidden !important;
+}
+.split-card.products .catalog-mini-grid figure:first-child figcaption{
+  display:block !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:0 !important;
+  z-index:5 !important;
+  margin:0 !important;
+  padding:5px 8px !important;
+  background:rgba(0,0,0,.72) !important;
+  color:#fff !important;
+  font-weight:800 !important;
+  font-size:clamp(10px,3vw,14px) !important;
+  line-height:1.05 !important;
+  text-transform:uppercase !important;
+  text-align:left !important;
 }
 
+/* 2) SERVIÇOS — todos os cards usam exatamente a mesma caixa.
+   Corrige especificamente Guardião de Piscina e BVI sem tocar no banner. */
+.split-card.services .catalog-mini-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+}
 .split-card.services .catalog-mini-grid figure{
-  position:relative !important;
   width:100% !important;
-  aspect-ratio:1 / 1 !important;
   height:auto !important;
+  aspect-ratio:1 / 1 !important;
   min-width:0 !important;
   min-height:0 !important;
   margin:0 !important;
   padding:0 !important;
-  overflow:hidden !important;
   box-sizing:border-box !important;
+  overflow:hidden !important;
   border-radius:8px !important;
-  background:transparent !important;
 }
-
 .split-card.services .catalog-mini-grid figure img{
-  position:absolute !important;
-  inset:0 !important;
   display:block !important;
   width:100% !important;
   height:100% !important;
@@ -2492,15 +2509,72 @@ html, body{
   max-height:none !important;
   margin:0 !important;
   padding:0 !important;
-  border:0 !important;
   object-fit:cover !important;
   object-position:center center !important;
   transform:none !important;
   box-sizing:border-box !important;
 }
 
-/* BOTÃO VOLTAR AO TOPO — o botão já existe no index.html.
-   Aqui apenas garantimos que volte a aparecer no smartphone. */
+
+/* =========================================================
+   AJUSTES SOBRE A BASE "EXTINTOR + SERVIÇOS"
+   - NÃO ALTERA O BANNER
+   - NÃO ALTERA O CARD EXTINTORES
+   - Corrige apenas Guardião de Piscina e BVI
+   - Mantém botão Voltar ao Topo
+   ========================================================= */
+
+/* Guardião de Piscina — remove as bordas/faixas brancas visíveis
+   fazendo um pequeno crop somente nessa imagem */
+.services-mini-grid figure:nth-child(3){
+  position:relative !important;
+  overflow:hidden !important;
+  background:#111 !important;
+}
+.services-mini-grid figure:nth-child(3) img{
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  width:112% !important;
+  height:112% !important;
+  min-width:112% !important;
+  min-height:112% !important;
+  max-width:none !important;
+  max-height:none !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  transform:translate(-50%,-50%) !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+}
+
+/* BVI — remove as bordas/faixas brancas visíveis
+   fazendo um pequeno crop somente nessa imagem */
+.services-mini-grid figure:nth-child(4){
+  position:relative !important;
+  overflow:hidden !important;
+  background:#111 !important;
+}
+.services-mini-grid figure:nth-child(4) img{
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  width:112% !important;
+  height:112% !important;
+  min-width:112% !important;
+  min-height:112% !important;
+  max-width:none !important;
+  max-height:none !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  transform:translate(-50%,-50%) !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+}
+
+/* Botão Voltar ao Topo */
 #backToTop.back-to-top{
   position:fixed !important;
   right:18px !important;
@@ -2511,14 +2585,12 @@ html, body{
   align-items:center !important;
   justify-content:center !important;
   z-index:9999 !important;
-  border:1px solid rgba(255,255,255,.35) !important;
   border-radius:50% !important;
   background:#111 !important;
   color:#fff !important;
   font-size:25px !important;
   font-weight:800 !important;
   line-height:1 !important;
-  cursor:pointer !important;
   opacity:.92 !important;
   visibility:visible !important;
   pointer-events:auto !important;
