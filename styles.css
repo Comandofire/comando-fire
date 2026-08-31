@@ -1853,3 +1853,306 @@ body{
   .service-banner-copy h1{font-size:clamp(1.85rem,8vw,3rem) !important;}
   .service-banner-copy p{font-size:.72rem !important;}
 }
+
+/* ============================================================
+   V12 — AJUSTES RESPONSIVOS FINAIS — MOBILE + DESKTOP
+   31/08/2026
+   ============================================================ */
+
+/* 1) FUNDO ESCURO = TEXTO CLARO, sem ser sobrescrito por regras de seção */
+.about-section .about-card,
+.about-section .about-card p,
+.about-section .about-card h1,
+.about-section .about-card h2,
+.about-section .about-card h3,
+.about-section .about-card h4,
+.about-section .about-card li,
+.about-section .about-card span:not(.eyebrow),
+.credentials-block,
+.credentials-block p,
+.credentials-block h2,
+.credentials-block h3,
+.credential-card,
+.credential-card p,
+.credential-card h3,
+.partners-section,
+.partners-section p,
+.footer,
+.footer p,
+.footer a,
+.footer span,
+.video-placeholder,
+.video-placeholder p,
+.video-placeholder span{
+  color:#fff !important;
+}
+.about-section .about-card .eyebrow,
+.about-section .about-card strong,
+.credentials-block .eyebrow,
+.credential-card strong{
+  color:#ff5500 !important;
+}
+
+/* 2) BANNER SERVIÇOS: duas áreas independentes, sem invasão entre imagens */
+.service-dual-media{
+  position:absolute !important;
+  inset:0 !important;
+  overflow:hidden !important;
+  background:#090909 !important;
+}
+.service-photo-left,
+.service-photo-right{
+  top:0 !important;
+  bottom:0 !important;
+  height:100% !important;
+  background-repeat:no-repeat !important;
+  background-size:cover !important;
+  filter:none !important;
+  opacity:1 !important;
+}
+.service-photo-left{
+  left:0 !important;
+  right:auto !important;
+  width:55% !important;
+  clip-path:polygon(0 0,100% 0,82% 100%,0 100%) !important;
+  background-position:center 40% !important;
+}
+.service-photo-right{
+  left:auto !important;
+  right:0 !important;
+  width:55% !important;
+  clip-path:polygon(18% 0,100% 0,100% 100%,0 100%) !important;
+  background-position:center center !important;
+}
+.service-diagonal-divider{
+  left:50% !important;
+  top:-10% !important;
+  width:34px !important;
+  height:120% !important;
+  transform:skewX(-17deg) !important;
+  background:linear-gradient(90deg,#ff6a20 0 34%,#c8c8c8 34% 66%,#fff 66% 100%) !important;
+  z-index:8 !important;
+  pointer-events:none !important;
+}
+.service-hero-slide::after{
+  background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.55) 32%,rgba(0,0,0,.22) 48%,rgba(0,0,0,.03) 56%,rgba(0,0,0,.04) 100%) !important;
+}
+.service-banner-copy{
+  width:47% !important;
+  max-width:620px !important;
+  padding-right:18px !important;
+}
+.service-banner-copy .eyebrow,
+.service-banner-copy h1,
+.service-banner-copy h1 strong,
+.service-banner-copy p{
+  color:#fff !important;
+  opacity:1 !important;
+}
+
+/* 3) PARCEIROS NO DESKTOP: 21 clientes, 3 x 7, cards realmente grandes */
+.partners-hero-inner{
+  grid-template-columns:32% 68% !important;
+  gap:28px !important;
+  max-width:1320px !important;
+}
+.partners-hero-copy h1{
+  font-size:clamp(2.6rem,3.55vw,4.45rem) !important;
+  line-height:.9 !important;
+}
+.partners-hero-logos{
+  display:grid !important;
+  grid-template-columns:repeat(7,minmax(0,1fr)) !important;
+  grid-template-rows:repeat(3,118px) !important;
+  gap:12px !important;
+  width:100% !important;
+  max-width:none !important;
+  overflow:visible !important;
+  position:static !important;
+}
+.partners-hero-logos img{
+  width:100% !important;
+  height:118px !important;
+  min-width:0 !important;
+  padding:7px !important;
+  box-sizing:border-box !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  background:#fff !important;
+  border-radius:10px !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.16) !important;
+}
+
+/* 4) BANNERS: conteúdo nunca fica escondido atrás do cabeçalho */
+.hero.exact-hero{
+  isolation:isolate !important;
+}
+.hero-slide:not(.exact-option4-slide) .hero-inner{
+  box-sizing:border-box !important;
+  overflow:visible !important;
+}
+
+/* 5) MOBILE: títulos inteiros, setas fora do texto e divisão correta */
+@media(max-width:640px){
+  .hero.exact-hero{
+    margin-top:74px !important;
+    height:430px !important;
+    min-height:430px !important;
+    overflow:hidden !important;
+  }
+  .hero-slide:not(.exact-option4-slide) .hero-inner{
+    height:100% !important;
+    padding:24px 52px 34px 54px !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+  }
+  .hero-slide:not(.exact-option4-slide) .hero-copy{
+    min-width:0 !important;
+    overflow:visible !important;
+  }
+  .hero-slide:not(.exact-option4-slide) h1{
+    margin:4px 0 12px !important;
+    font-size:clamp(2rem,8.2vw,2.75rem) !important;
+    line-height:.9 !important;
+    overflow:visible !important;
+    max-height:none !important;
+  }
+  .hero-slide:not(.exact-option4-slide) p{
+    margin:0 !important;
+    font-size:.82rem !important;
+    line-height:1.35 !important;
+  }
+  .exact-hero .hero-arrow{
+    top:54% !important;
+    width:42px !important;
+    height:42px !important;
+    z-index:50 !important;
+  }
+  .exact-hero .hero-arrow.prev{left:7px !important;}
+  .exact-hero .hero-arrow.next{right:7px !important;}
+  .hero-dots{bottom:10px !important;}
+
+  /* Serviço mobile: texto só no lado esquerdo; produto começa após a diagonal */
+  .service-photo-left{
+    width:62% !important;
+    clip-path:polygon(0 0,100% 0,78% 100%,0 100%) !important;
+  }
+  .service-photo-right{
+    width:52% !important;
+    clip-path:polygon(22% 0,100% 0,100% 100%,0 100%) !important;
+    background-position:center center !important;
+  }
+  .service-diagonal-divider{
+    left:53% !important;
+    width:24px !important;
+    top:-8% !important;
+    height:116% !important;
+  }
+  .service-banner-copy{
+    width:52% !important;
+    max-width:52% !important;
+    padding-right:4px !important;
+  }
+  .service-banner-copy h1{
+    font-size:clamp(1.78rem,7.8vw,2.55rem) !important;
+  }
+  .service-banner-copy p{
+    font-size:.74rem !important;
+    line-height:1.28 !important;
+  }
+  .service-banner-copy .hero-actions{
+    display:none !important;
+  }
+
+  /* Parceiros mobile: título completo à esquerda e 21 logos à direita */
+  .partners-hero-inner{
+    display:grid !important;
+    grid-template-columns:43% 57% !important;
+    gap:7px !important;
+    padding:22px 48px 30px 50px !important;
+    align-items:center !important;
+  }
+  .partners-hero-copy{
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .partners-hero-copy h1{
+    font-size:clamp(1.55rem,6.7vw,2.2rem) !important;
+    line-height:.9 !important;
+    margin:4px 0 10px !important;
+  }
+  .partners-hero-copy p{
+    font-size:.69rem !important;
+    line-height:1.25 !important;
+  }
+  .partners-hero-logos{
+    width:100% !important;
+    height:auto !important;
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    grid-template-rows:repeat(7,38px) !important;
+    gap:4px !important;
+    align-content:center !important;
+  }
+  .partners-hero-logos img{
+    width:100% !important;
+    height:38px !important;
+    padding:2px !important;
+    border-radius:4px !important;
+  }
+
+  /* Galeria mobile: texto completo e painel futurista sem empurrar o título */
+  .gallery-hero-inner{
+    display:grid !important;
+    grid-template-columns:46% 54% !important;
+    gap:6px !important;
+    padding:22px 48px 30px 50px !important;
+    align-items:center !important;
+  }
+  .gallery-hero-copy{
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .gallery-hero-copy h1{
+    font-size:clamp(1.85rem,7.6vw,2.5rem) !important;
+    line-height:.9 !important;
+    margin:4px 0 12px !important;
+  }
+  .gallery-hero-copy p{
+    font-size:.72rem !important;
+    line-height:1.3 !important;
+  }
+  .gallery-hero-copy .hero-actions{display:none !important;}
+  .gallery-future-grid{
+    width:100% !important;
+    height:290px !important;
+    min-height:290px !important;
+    padding:6px !important;
+    gap:4px !important;
+    transform:none !important;
+    box-sizing:border-box !important;
+  }
+
+  /* Voltar ao topo acima dos botões sociais */
+  .back-to-top{
+    display:flex !important;
+    right:16px !important;
+    bottom:158px !important;
+    z-index:40000 !important;
+  }
+}
+
+/* 6) TELAS INTERMEDIÁRIAS: mantém os logos grandes sem estourar o banner */
+@media(min-width:641px) and (max-width:1100px){
+  .partners-hero-inner{
+    grid-template-columns:30% 70% !important;
+  }
+  .partners-hero-logos{
+    grid-template-rows:repeat(3,82px) !important;
+    gap:8px !important;
+  }
+  .partners-hero-logos img{
+    height:82px !important;
+    padding:4px !important;
+  }
+}
