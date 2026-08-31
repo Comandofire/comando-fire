@@ -2479,3 +2479,190 @@ html, body{
   bottom:7px !important;
   z-index:31 !important;
 }
+
+
+/* =========================================================
+   CORREÇÃO 01 — BANNER PRINCIPAL NO SMARTPHONE
+   - altura acompanha exatamente a proporção da imagem 1536x579
+   - remove faixas pretas acima/abaixo
+   - mantém áreas clicáveis sobre os 2 botões desenhados na imagem
+   ========================================================= */
+
+.hero.exact-hero,
+.hero.exact-hero .hero-track,
+.hero.exact-hero .hero-slide{
+  height:calc(100vw * 579 / 1536) !important;
+  min-height:0 !important;
+  max-height:none !important;
+}
+
+.exact-option4-picture{
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+}
+
+.exact-option4-picture img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:fill !important;
+  display:block !important;
+}
+
+/* Botão desenhado: FALE COM A EQUIPE */
+.exact-option4-slide .exact-hotspot-team{
+  position:absolute !important;
+  left:5.1% !important;
+  top:79.0% !important;
+  width:14.8% !important;
+  height:10% !important;
+  z-index:50 !important;
+  display:block !important;
+  pointer-events:auto !important;
+  cursor:pointer !important;
+}
+
+/* Botão desenhado: CONHEÇA OS SERVIÇOS */
+.exact-option4-slide .exact-hotspot-services{
+  position:absolute !important;
+  left:20.8% !important;
+  top:79.0% !important;
+  width:15.2% !important;
+  height:10% !important;
+  z-index:50 !important;
+  display:block !important;
+  pointer-events:auto !important;
+  cursor:pointer !important;
+}
+
+
+/* =========================================================
+   BANNERS HOMOGÊNEOS — SMARTPHONE
+   Mesmo layout visual em Início / Serviços / Parceiros / Galeria.
+   Medidas independentes do desktop.
+   ========================================================= */
+
+/* TODAS as 4 abas têm exatamente a altura/proporção do banner principal */
+.hero.exact-hero,
+.hero.exact-hero .hero-track,
+.hero.exact-hero .hero-slide{
+  height:calc(100vw * 579 / 1536) !important;
+  min-height:0 !important;
+  max-height:none !important;
+}
+
+.hero.exact-hero .hero-slide{
+  position:absolute !important;
+  inset:0 !important;
+  overflow:hidden !important;
+}
+
+/* Slides 2, 3 e 4 passam a usar a mesma organização visual do primeiro:
+   conteúdo alinhado para a esquerda, dentro da mesma altura */
+.hero-slide:not(.exact-option4-slide) .hero-inner{
+  width:100% !important;
+  height:100% !important;
+  margin:0 !important;
+  padding:0 7.5% !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+}
+
+.hero-slide:not(.exact-option4-slide) .hero-copy{
+  width:48% !important;
+  max-width:48% !important;
+  height:auto !important;
+  padding:0 !important;
+  margin:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+  text-align:left !important;
+}
+
+.hero-slide:not(.exact-option4-slide) .eyebrow{
+  font-size:clamp(7px, 1.8vw, 11px) !important;
+  line-height:1 !important;
+  margin-bottom:4px !important;
+}
+
+.hero-slide:not(.exact-option4-slide) h1,
+.hero-slide:not(.exact-option4-slide) .hero h1{
+  font-size:clamp(17px, 5.2vw, 31px) !important;
+  line-height:.88 !important;
+  margin:0 0 5px !important;
+}
+
+.hero-slide:not(.exact-option4-slide) p{
+  font-size:clamp(7px, 1.8vw, 11px) !important;
+  line-height:1.15 !important;
+  margin:0 !important;
+  max-width:100% !important;
+}
+
+/* Todos os botões ficam na MESMA DIREÇÃO: lado a lado, da esquerda para direita */
+.hero-slide:not(.exact-option4-slide) .hero-actions{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:5px !important;
+  margin-top:6px !important;
+}
+
+.hero-slide:not(.exact-option4-slide) .btn{
+  min-height:0 !important;
+  height:auto !important;
+  padding:4px 7px !important;
+  font-size:clamp(6px, 1.45vw, 9px) !important;
+  line-height:1 !important;
+  white-space:nowrap !important;
+}
+
+/* Parceiros: mesma altura; texto à esquerda e logos à direita */
+.partners-hero-inner{
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:3% !important;
+}
+.partners-hero-copy{
+  width:43% !important;
+  max-width:43% !important;
+}
+.partners-hero-logos{
+  width:49% !important;
+  height:auto !important;
+  max-height:78% !important;
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:3px !important;
+  overflow:hidden !important;
+  align-content:center !important;
+}
+.partners-hero-logos img{
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:2/1 !important;
+  object-fit:contain !important;
+}
+
+/* Setas ficam exatamente na mesma linha em todos os banners */
+.hero.exact-hero .hero-arrow{
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  width:28px !important;
+  height:28px !important;
+}
+
+/* Indicadores na mesma posição em todas as abas */
+.hero.exact-hero .hero-dots{
+  bottom:5px !important;
+  left:50% !important;
+  transform:translateX(-50%) !important;
+  margin:0 !important;
+}
