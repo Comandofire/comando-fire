@@ -1,395 +1,125 @@
-/* ============================================================
-   COMANDO FIRE — SMARTPHONE ONLY
-   Desktop untouched.
-   ============================================================ */
 
-html, body{
-  width:100% !important;
-  max-width:100% !important;
-  overflow-x:hidden !important;
+/* MOBILE.CSS — REFEITO DO ZERO. SOMENTE SMARTPHONE. */
+html,body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
+
+.header{height:68px!important}
+.header .nav{height:68px!important;padding:0 12px!important}
+.header .brand{width:auto!important;max-width:165px!important}
+.header .brand img{width:150px!important;height:58px!important;object-fit:contain!important}
+.menu-btn{display:block!important}
+.menu{display:none!important;position:absolute!important;top:68px!important;left:0!important;right:0!important;background:#070707!important;z-index:2000!important}
+.menu.open{display:flex!important}
+
+/* BANNER: 250px, sem invadir a seção Produtos */
+.hero.exact-hero,
+.hero.exact-hero .hero-track,
+.hero.exact-hero .hero-slide{
+ height:250px!important;min-height:250px!important;max-height:250px!important;
+ width:100%!important;max-width:100vw!important;overflow:hidden!important
 }
+.hero.exact-hero{margin-top:68px!important}
 
-/* HEADER MOBILE */
-:root{ --header-h:68px; }
+/* capa */
+.exact-option4-picture{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;background:#050505!important}
+.exact-option4-picture img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important}
 
-.header{ height:var(--header-h) !important; }
-.brand img{ width:132px !important; height:54px !important; }
-.menu-btn{ display:block !important; }
-
-.menu{
-  display:none !important;
-  position:absolute !important;
-  top:68px !important;
-  left:0 !important;
-  right:0 !important;
-  padding:14px 18px 20px !important;
-  background:#080808 !important;
-  flex-direction:column !important;
-  align-items:stretch !important;
-  gap:0 !important;
-}
-.menu.open{ display:flex !important; }
-
-/* ============================================================
-   BANNER MOBILE
-   Menor, alinhado e sem cortes.
-   ============================================================ */
-.hero{
-  margin-top:var(--header-h) !important;
-  height:240px !important;
-  min-height:240px !important;
-  max-height:240px !important;
-  overflow:hidden !important;
-}
-
-.hero-track,
-.hero-slide{
-  height:240px !important;
-  min-height:240px !important;
-  max-height:240px !important;
-}
-
-.hero-slide{
-  overflow:hidden !important;
-}
-
-/* SLIDE 1 — capa inteira */
-.exact-option4-picture{
-  position:absolute !important;
-  inset:0 !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  background:#050505 !important;
-}
-
-.exact-option4-picture img{
-  width:100% !important;
-  height:100% !important;
-  object-fit:contain !important;
-  object-position:center !important;
-}
-
-/* SLIDE 2 — SERVIÇOS / PRODUTOS
-   divisão vertical reta 50/50 */
-.service-hero-slide .service-dual-media{
-  position:absolute !important;
-  inset:0 !important;
-  overflow:hidden !important;
-}
-
+/* serviços: duas fotos inteiras, corte vertical reto */
+.service-hero-slide .service-dual-media{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important}
 .service-hero-slide .service-photo{
-  position:absolute !important;
-  top:0 !important;
-  bottom:0 !important;
-  width:50% !important;
-  height:100% !important;
-  clip-path:none !important;
-  -webkit-clip-path:none !important;
-  transform:none !important;
-  background-size:contain !important;
-  background-repeat:no-repeat !important;
-  background-position:center center !important;
-  background-color:#050505 !important;
+ position:absolute!important;top:0!important;bottom:0!important;width:50%!important;height:100%!important;
+ clip-path:none!important;-webkit-clip-path:none!important;transform:none!important;
+ background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important;background-color:#050505!important
 }
-
-.service-hero-slide .service-photo-left{
-  left:0 !important;
-  right:auto !important;
-}
-
-.service-hero-slide .service-photo-right{
-  left:50% !important;
-  right:auto !important;
-}
-
+.service-hero-slide .service-photo-left{left:0!important;right:auto!important}
+.service-hero-slide .service-photo-right{left:50%!important;right:auto!important}
 .service-hero-slide .service-diagonal-divider{
-  left:50% !important;
-  top:0 !important;
-  bottom:0 !important;
-  width:4px !important;
-  height:100% !important;
-  transform:translateX(-50%) !important;
-  clip-path:none !important;
-  -webkit-clip-path:none !important;
+ position:absolute!important;left:50%!important;top:0!important;bottom:0!important;width:4px!important;height:100%!important;
+ transform:translateX(-50%)!important;clip-path:none!important;background:#ff5500!important;z-index:10!important
 }
+.service-hero-slide::after{display:none!important}
+.service-hero-slide::before{content:""!important;position:absolute!important;inset:0 50% 0 0!important;background:rgba(0,0,0,.42)!important;z-index:3!important}
+.service-hero-slide .hero-inner{height:100%!important;padding:8px 8px 18px!important;display:flex!important;align-items:center!important}
+.service-banner-copy{width:43%!important;max-width:43%!important;min-width:0!important;margin:0!important;padding:0!important}
+.service-banner-copy .eyebrow{font-size:.40rem!important}
+.service-banner-copy h1{font-size:.73rem!important;line-height:.94!important;margin:2px 0 4px!important;white-space:normal!important;overflow:visible!important}
+.service-banner-copy p{font-size:.36rem!important;line-height:1.08!important;margin:0!important;overflow:visible!important}
+.service-banner-copy .hero-actions{display:none!important}
 
-.service-hero-slide::before{
-  content:"" !important;
-  position:absolute !important;
-  inset:0 50% 0 0 !important;
-  background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.24)) !important;
-  z-index:3 !important;
-  pointer-events:none !important;
+/* parceiros: 21 logos visíveis dentro do banner */
+.partners-hero-slide .hero-art{display:none!important}
+.partners-hero-slide .partners-hero-inner{
+ position:relative!important;width:100%!important;height:100%!important;max-width:none!important;margin:0!important;
+ padding:7px 8px 18px!important;display:flex!important;flex-direction:column!important;gap:3px!important;align-items:stretch!important
 }
-
-.service-hero-slide .hero-inner{
-  position:relative !important;
-  z-index:8 !important;
-  height:100% !important;
-  display:flex !important;
-  align-items:center !important;
-  padding:8px 8px 20px !important;
-}
-
-.service-banner-copy{
-  width:44% !important;
-  max-width:44% !important;
-  min-width:0 !important;
-  margin:0 !important;
-  padding:0 2px 0 0 !important;
-}
-
-.service-banner-copy .eyebrow{
-  font-size:.40rem !important;
-  line-height:1 !important;
-}
-
-.service-banner-copy h1{
-  font-size:.74rem !important;
-  line-height:.95 !important;
-  margin:2px 0 4px !important;
-  white-space:normal !important;
-  word-break:normal !important;
-  overflow-wrap:normal !important;
-}
-
-.service-banner-copy p{
-  font-size:.38rem !important;
-  line-height:1.12 !important;
-  margin:0 !important;
-}
-
-.service-banner-copy .hero-actions{
-  display:none !important;
-}
-
-/* SLIDE 3 — PARCEIROS
-   todos visíveis em grade 7 x 3 */
-.partners-hero-slide .hero-art{
-  display:none !important;
-}
-
-.partners-hero-inner,
-.partners-hero-slide .hero-inner{
-  width:100% !important;
-  height:100% !important;
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:stretch !important;
-  justify-content:flex-start !important;
-  gap:4px !important;
-  padding:7px 8px 18px !important;
-}
-
-.partners-hero-copy{
-  width:100% !important;
-  max-width:100% !important;
-  min-width:0 !important;
-  margin:0 !important;
-  padding:0 !important;
-  flex:0 0 auto !important;
-}
-
-.partners-hero-copy .eyebrow{
-  font-size:.38rem !important;
-}
-
-.partners-hero-copy h1{
-  font-size:.82rem !important;
-  line-height:.92 !important;
-  margin:1px 0 2px !important;
-}
-
-.partners-hero-copy p{
-  font-size:.36rem !important;
-  line-height:1.08 !important;
-  margin:0 !important;
-}
-
-.partners-hero-copy .hero-actions{
-  display:none !important;
-}
-
+.partners-hero-copy{position:static!important;width:100%!important;max-width:100%!important;min-height:0!important;margin:0!important;padding:0!important}
+.partners-hero-copy .eyebrow{font-size:.34rem!important}
+.partners-hero-copy h1{font-size:.70rem!important;line-height:.9!important;margin:1px 0!important}
+.partners-hero-copy p{font-size:.31rem!important;line-height:1.03!important;margin:0!important}
+.partners-hero-copy .hero-actions{display:none!important}
 .partners-hero-logos{
-  position:static !important;
-  width:100% !important;
-  height:164px !important;
-  margin:0 !important;
-  padding:0 !important;
-  display:grid !important;
-  grid-template-columns:repeat(7,1fr) !important;
-  grid-template-rows:repeat(3,1fr) !important;
-  grid-auto-flow:row !important;
-  gap:4px !important;
-  overflow:visible !important;
-  align-content:stretch !important;
-  justify-content:stretch !important;
+ position:static!important;inset:auto!important;width:100%!important;height:181px!important;max-height:181px!important;
+ margin:0!important;padding:0!important;display:grid!important;
+ grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:repeat(3,minmax(0,1fr))!important;
+ grid-auto-flow:row!important;gap:3px!important;overflow:hidden!important;align-content:stretch!important
 }
-
 .partners-hero-logos img{
-  width:100% !important;
-  height:100% !important;
-  min-width:0 !important;
-  min-height:0 !important;
-  max-width:none !important;
-  max-height:none !important;
-  aspect-ratio:1/1 !important;
-  object-fit:contain !important;
-  object-position:center !important;
-  background:#fff !important;
-  padding:2px !important;
-  margin:0 !important;
-  border-radius:4px !important;
-  opacity:1 !important;
-  visibility:visible !important;
-  box-sizing:border-box !important;
+ display:block!important;width:100%!important;height:100%!important;min-width:0!important;min-height:0!important;
+ aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;background:#fff!important;
+ padding:2px!important;margin:0!important;border-radius:3px!important;visibility:visible!important;opacity:1!important
 }
 
-/* SLIDE 4 — GALERIA
-   6 quadros inteiros, 3 por linha */
-.gallery-hero-slide .hero-art{
-  display:none !important;
+/* galeria: os seis quadros cabem inteiros */
+.gallery-hero-slide .hero-art{display:none!important}
+.gallery-hero-slide .gallery-hero-inner{
+ position:relative!important;width:100%!important;height:100%!important;max-width:none!important;margin:0!important;
+ padding:7px 8px 18px!important;display:flex!important;flex-direction:column!important;gap:3px!important;align-items:stretch!important
 }
-
-.gallery-hero-inner,
-.gallery-hero-slide .hero-inner{
-  width:100% !important;
-  height:100% !important;
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:stretch !important;
-  justify-content:flex-start !important;
-  gap:4px !important;
-  padding:7px 8px 18px !important;
-}
-
-.gallery-hero-copy{
-  width:100% !important;
-  max-width:100% !important;
-  min-width:0 !important;
-  margin:0 !important;
-  padding:0 !important;
-  flex:0 0 auto !important;
-}
-
-.gallery-hero-copy .eyebrow{
-  font-size:.38rem !important;
-}
-
-.gallery-hero-copy h1{
-  font-size:.82rem !important;
-  line-height:.92 !important;
-  margin:1px 0 2px !important;
-  white-space:normal !important;
-}
-
-.gallery-hero-copy p{
-  font-size:.36rem !important;
-  line-height:1.08 !important;
-  margin:0 !important;
-}
-
-.gallery-hero-copy .hero-actions{
-  display:none !important;
-}
-
+.gallery-hero-copy{position:static!important;width:100%!important;max-width:100%!important;margin:0!important;padding:0!important}
+.gallery-hero-copy .eyebrow{font-size:.34rem!important}
+.gallery-hero-copy h1{font-size:.72rem!important;line-height:.9!important;margin:1px 0!important}
+.gallery-hero-copy p{font-size:.31rem!important;line-height:1.03!important;margin:0!important}
+.gallery-hero-copy .hero-actions{display:none!important}
 .gallery-future-grid{
-  position:static !important;
-  width:100% !important;
-  height:166px !important;
-  min-height:166px !important;
-  max-height:166px !important;
-  margin:0 !important;
-  display:grid !important;
-  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
-  grid-template-rows:repeat(2,minmax(0,1fr)) !important;
-  gap:4px !important;
-  transform:none !important;
+ position:static!important;inset:auto!important;width:100%!important;height:181px!important;min-height:181px!important;max-height:181px!important;
+ margin:0!important;padding:0!important;display:grid!important;
+ grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;
+ gap:4px!important;transform:none!important;overflow:hidden!important
+}
+.gallery-future-card,.gallery-future-card.g1,.gallery-future-card.g2,.gallery-future-card.g3,
+.gallery-future-card.g4,.gallery-future-card.g5,.gallery-future-card.g6{
+ position:relative!important;inset:auto!important;width:auto!important;height:auto!important;min-width:0!important;min-height:0!important;
+ margin:0!important;padding:4px!important;transform:none!important;font-size:.42rem!important
 }
 
-.gallery-future-card,
-.gallery-future-card.g1,
-.gallery-future-card.g2,
-.gallery-future-card.g3,
-.gallery-future-card.g4,
-.gallery-future-card.g5,
-.gallery-future-card.g6{
-  position:relative !important;
-  inset:auto !important;
-  top:auto !important;
-  right:auto !important;
-  bottom:auto !important;
-  left:auto !important;
-  width:auto !important;
-  height:auto !important;
-  min-width:0 !important;
-  min-height:0 !important;
-  margin:0 !important;
-  transform:none !important;
-  padding:4px !important;
-  font-size:.45rem !important;
+/* controles */
+.exact-hero .hero-arrow{display:flex!important;align-items:center!important;justify-content:center!important;width:30px!important;height:30px!important;top:50%!important;transform:translateY(-50%)!important;font-size:20px!important;z-index:60!important}
+.exact-hero .hero-arrow.prev{left:4px!important}.exact-hero .hero-arrow.next{right:4px!important}
+.hero-dots{bottom:4px!important;z-index:61!important}
+.hero-dots button{width:17px!important;height:3px!important}.hero-dots button.active{width:29px!important}
+
+/* nome Extintores */
+.products-mini-grid .extintor-card figcaption{
+ display:block!important;position:absolute!important;left:0!important;right:0!important;bottom:0!important;z-index:50!important;
+ padding:22px 7px 6px!important;background:linear-gradient(transparent,rgba(0,0,0,.95))!important;color:#fff!important;
+ font-family:"Barlow Condensed",sans-serif!important;font-size:.78rem!important;line-height:1!important;font-weight:800!important;
+ text-transform:uppercase!important;visibility:visible!important;opacity:1!important
 }
 
-/* CONTROLES */
-.hero-arrow{
-  width:28px !important;
-  height:28px !important;
-  font-size:18px !important;
-  top:50% !important;
-  transform:translateY(-50%) !important;
+/* restante do smartphone */
+.split-wrap{grid-template-columns:1fr!important}
+.split-card{min-height:auto!important}
+.split-body{padding:36px 14px!important}
+.catalog-mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.section{padding:50px 0!important}
+.section-header{display:block!important}
+.about-story-grid,.credentials-block,.jobs-grid,.contact-grid{grid-template-columns:1fr!important}
+.values-grid,.credentials-cards,.service-grid{grid-template-columns:1fr!important}
+.service-card.wide{grid-column:auto!important}
+.gallery-grid,.video-grid{grid-template-columns:1fr!important}
+.footer-grid{grid-template-columns:1fr 1fr!important}
+
+@media(max-width:390px){
+ .hero.exact-hero,.hero.exact-hero .hero-track,.hero.exact-hero .hero-slide{height:235px!important;min-height:235px!important;max-height:235px!important}
+ .partners-hero-logos{height:166px!important;max-height:166px!important}
+ .gallery-future-grid{height:166px!important;min-height:166px!important;max-height:166px!important}
 }
-
-.hero-arrow.prev{left:4px !important}
-.hero-arrow.next{right:4px !important}
-
-.hero-dots{
-  bottom:4px !important;
-}
-
-.hero-dots button{
-  width:16px !important;
-  height:3px !important;
-}
-
-.hero-dots button.active{
-  width:28px !important;
-}
-
-/* PRODUTOS: mesma aparência do nome Extintores */
-.catalog-mini-grid figcaption{
-  display:block !important;
-  position:absolute !important;
-  left:0 !important;
-  right:0 !important;
-  bottom:0 !important;
-  padding:22px 7px 6px !important;
-  margin:0 !important;
-  background:linear-gradient(transparent,rgba(0,0,0,.92)) !important;
-  color:#fff !important;
-  font-family:"Barlow Condensed",sans-serif !important;
-  font-size:.76rem !important;
-  line-height:1 !important;
-  font-weight:800 !important;
-  text-transform:uppercase !important;
-  letter-spacing:.02em !important;
-}
-
-/* Restante da página */
-.split-wrap{grid-template-columns:1fr !important}
-.split-card{min-height:auto !important}
-.split-body{padding:36px 14px !important}
-.catalog-mini-grid{grid-template-columns:repeat(2,1fr) !important;gap:8px !important}
-.section{padding:50px 0 !important}
-.section-header{display:block !important}
-.about-story-grid,
-.credentials-block,
-.jobs-grid,
-.contact-grid{grid-template-columns:1fr !important}
-.values-grid{grid-template-columns:1fr !important}
-.credentials-cards{grid-template-columns:1fr !important}
-.service-grid{grid-template-columns:1fr !important}
-.service-card.wide{grid-column:auto !important}
-.gallery-grid,
-.video-grid{grid-template-columns:1fr !important}
-.footer-grid{grid-template-columns:1fr 1fr !important}
