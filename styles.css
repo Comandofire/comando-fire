@@ -2605,3 +2605,154 @@ body{
     overflow-x: hidden !important;
   }
 }
+
+
+/* ============================================================
+   AJUSTE MOBILE — BANNER MENOR E CONTEÚDO INTEIRO
+   SOMENTE SMARTPHONE. NÃO ALTERA DESKTOP.
+   ============================================================ */
+@media (max-width: 640px){
+
+  /* O erro anterior era 560px: grande demais.
+     Agora o banner mobile fica compacto. */
+  .hero.exact-hero,
+  .hero.exact-hero .hero-track,
+  .hero.exact-hero .hero-slide{
+    height: 360px !important;
+    min-height: 360px !important;
+    max-height: 360px !important;
+  }
+
+  /* Imagem principal sem corte */
+  .hero-slide:first-child .hero-art,
+  .hero-slide:first-child .art-1{
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+  }
+
+  /* Serviços / Produtos: 50% + 50%, linha RETA e imagens inteiras */
+  .service-hero-slide .service-photo-left,
+  .service-hero-slide .service-photo-right{
+    width: 50% !important;
+    height: 100% !important;
+    top: 0 !important;
+    bottom: auto !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+    transform: none !important;
+  }
+
+  .service-hero-slide .service-photo-left{
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  .service-hero-slide .service-photo-right{
+    left: 50% !important;
+    right: auto !important;
+  }
+
+  .service-hero-slide .service-diagonal-divider{
+    left: calc(50% - 2px) !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    transform: none !important;
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+  }
+
+  .service-hero-slide .hero-inner{
+    padding: 18px 14px 42px !important;
+  }
+
+  .service-banner-copy{
+    width: 45% !important;
+    max-width: 45% !important;
+  }
+
+  .service-banner-copy h1{
+    font-size: 1.45rem !important;
+    line-height: .95 !important;
+    margin: 0 0 8px !important;
+  }
+
+  .service-banner-copy p{
+    font-size: .68rem !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Parceiros: mantém cards grandes sem aumentar o banner.
+     A lista desliza horizontalmente em 2 linhas. */
+  .partners-hero-slide .hero-inner{
+    padding: 14px 14px 38px !important;
+    gap: 8px !important;
+  }
+
+  .partners-hero-copy h1{
+    font-size: 1.55rem !important;
+    margin: 0 0 4px !important;
+  }
+
+  .partners-hero-copy p{
+    font-size: .68rem !important;
+    line-height: 1.18 !important;
+  }
+
+  .partners-hero-logos{
+    grid-template-rows: repeat(2, 82px) !important;
+    grid-auto-columns: 82px !important;
+    gap: 7px !important;
+    padding: 2px 2px 6px !important;
+  }
+
+  .partners-hero-logos img{
+    width: 82px !important;
+    height: 82px !important;
+    min-width: 82px !important;
+    min-height: 82px !important;
+    padding: 5px !important;
+  }
+
+  /* Galeria: tudo dentro do banner compacto */
+  .gallery-hero-slide .hero-inner{
+    padding: 14px 14px 38px !important;
+    gap: 8px !important;
+  }
+
+  .gallery-hero-slide .hero-copy h1{
+    font-size: 1.55rem !important;
+    margin: 0 0 4px !important;
+  }
+
+  .gallery-hero-slide .hero-copy p{
+    font-size: .68rem !important;
+    line-height: 1.18 !important;
+  }
+
+  .gallery-future-grid{
+    height: 205px !important;
+    min-height: 205px !important;
+    max-height: 205px !important;
+  }
+
+  /* Setas menores para não ocupar a imagem */
+  .hero-prev,
+  .hero-next{
+    width: 38px !important;
+    height: 38px !important;
+    top: 50% !important;
+  }
+
+  .hero-prev{ left: 6px !important; }
+  .hero-next{ right: 6px !important; }
+
+  .hero-dots{
+    bottom: 8px !important;
+  }
+}
