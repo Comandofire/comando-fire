@@ -1,44 +1,62 @@
 /* ============================================================
-   COMANDO FIRE — MOBILE LIMPO
-   SOMENTE SMARTPHONE (carregado pelo media do index.html)
-   Desktop não recebe nenhuma regra deste arquivo.
+   COMANDO FIRE — SMARTPHONE ONLY
+   Desktop untouched.
    ============================================================ */
 
-html,body{
+html, body{
   width:100% !important;
   max-width:100% !important;
   overflow-x:hidden !important;
 }
 
-/* O banner anterior tinha 340px CSS, que no aparelho ficava visualmente enorme.
-   Agora ele fica compacto. */
-.hero.exact-hero,
-.hero.exact-hero .hero-track,
-.hero.exact-hero .hero-slide{
-  height:245px !important;
-  min-height:245px !important;
-  max-height:245px !important;
-}
+/* HEADER MOBILE */
+:root{ --header-h:68px; }
 
-.hero.exact-hero{
-  margin-top:74px !important;
+.header{ height:var(--header-h) !important; }
+.brand img{ width:132px !important; height:54px !important; }
+.menu-btn{ display:block !important; }
+
+.menu{
+  display:none !important;
+  position:absolute !important;
+  top:68px !important;
+  left:0 !important;
+  right:0 !important;
+  padding:14px 18px 20px !important;
+  background:#080808 !important;
+  flex-direction:column !important;
+  align-items:stretch !important;
+  gap:0 !important;
+}
+.menu.open{ display:flex !important; }
+
+/* ============================================================
+   BANNER MOBILE
+   Menor, alinhado e sem cortes.
+   ============================================================ */
+.hero{
+  margin-top:var(--header-h) !important;
+  height:240px !important;
+  min-height:240px !important;
+  max-height:240px !important;
   overflow:hidden !important;
 }
 
-.hero.exact-hero .hero-slide{
+.hero-track,
+.hero-slide{
+  height:240px !important;
+  min-height:240px !important;
+  max-height:240px !important;
+}
+
+.hero-slide{
   overflow:hidden !important;
 }
 
-/* ---------- SLIDE 1: IMAGEM PRINCIPAL INTEIRA ---------- */
-.exact-option4-slide{
-  background:#050505 !important;
-}
-
+/* SLIDE 1 — capa inteira */
 .exact-option4-picture{
   position:absolute !important;
   inset:0 !important;
-  width:100% !important;
-  height:100% !important;
   display:flex !important;
   align-items:center !important;
   justify-content:center !important;
@@ -48,30 +66,19 @@ html,body{
 .exact-option4-picture img{
   width:100% !important;
   height:100% !important;
-  max-width:100% !important;
-  max-height:100% !important;
   object-fit:contain !important;
-  object-position:center center !important;
+  object-position:center !important;
 }
 
-/* ---------- SLIDE 2: SERVIÇO | PRODUTO, LINHA RETA ---------- */
-.service-hero-slide{
-  background:#050505 !important;
-}
-
-.service-hero-slide::after{
-  display:none !important;
-}
-
-.service-dual-media{
+/* SLIDE 2 — SERVIÇOS / PRODUTOS
+   divisão vertical reta 50/50 */
+.service-hero-slide .service-dual-media{
   position:absolute !important;
   inset:0 !important;
   overflow:hidden !important;
-  background:#050505 !important;
 }
 
-.service-photo-left,
-.service-photo-right{
+.service-hero-slide .service-photo{
   position:absolute !important;
   top:0 !important;
   bottom:0 !important;
@@ -80,23 +87,23 @@ html,body{
   clip-path:none !important;
   -webkit-clip-path:none !important;
   transform:none !important;
-  background-repeat:no-repeat !important;
   background-size:contain !important;
+  background-repeat:no-repeat !important;
   background-position:center center !important;
+  background-color:#050505 !important;
 }
 
-.service-photo-left{
+.service-hero-slide .service-photo-left{
   left:0 !important;
   right:auto !important;
 }
 
-.service-photo-right{
+.service-hero-slide .service-photo-right{
   left:50% !important;
   right:auto !important;
 }
 
-.service-diagonal-divider{
-  position:absolute !important;
+.service-hero-slide .service-diagonal-divider{
   left:50% !important;
   top:0 !important;
   bottom:0 !important;
@@ -105,50 +112,51 @@ html,body{
   transform:translateX(-50%) !important;
   clip-path:none !important;
   -webkit-clip-path:none !important;
-  background:linear-gradient(to right,#ff5500 0 34%,#c0c0c0 34% 67%,#fff 67% 100%) !important;
-  z-index:12 !important;
 }
 
 .service-hero-slide::before{
   content:"" !important;
   position:absolute !important;
   inset:0 50% 0 0 !important;
-  background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.18)) !important;
-  z-index:4 !important;
+  background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.24)) !important;
+  z-index:3 !important;
   pointer-events:none !important;
 }
 
 .service-hero-slide .hero-inner{
   position:relative !important;
-  z-index:10 !important;
-  width:100% !important;
+  z-index:8 !important;
   height:100% !important;
-  padding:12px 10px 26px !important;
   display:flex !important;
   align-items:center !important;
+  padding:8px 8px 20px !important;
 }
 
 .service-banner-copy{
-  width:46% !important;
-  max-width:46% !important;
-  padding:0 !important;
+  width:44% !important;
+  max-width:44% !important;
+  min-width:0 !important;
   margin:0 !important;
+  padding:0 2px 0 0 !important;
 }
 
 .service-banner-copy .eyebrow{
-  font-size:.48rem !important;
-  letter-spacing:.15em !important;
+  font-size:.40rem !important;
+  line-height:1 !important;
 }
 
 .service-banner-copy h1{
-  font-size:1.05rem !important;
-  line-height:.92 !important;
-  margin:4px 0 6px !important;
+  font-size:.74rem !important;
+  line-height:.95 !important;
+  margin:2px 0 4px !important;
+  white-space:normal !important;
+  word-break:normal !important;
+  overflow-wrap:normal !important;
 }
 
 .service-banner-copy p{
-  font-size:.50rem !important;
-  line-height:1.18 !important;
+  font-size:.38rem !important;
+  line-height:1.12 !important;
   margin:0 !important;
 }
 
@@ -156,13 +164,14 @@ html,body{
   display:none !important;
 }
 
-/* ---------- SLIDE 3: PARCEIROS ---------- */
+/* SLIDE 3 — PARCEIROS
+   todos visíveis em grade 7 x 3 */
 .partners-hero-slide .hero-art{
-  display:block !important;
+  display:none !important;
 }
 
-.partners-hero-slide .hero-inner,
-.partners-hero-inner{
+.partners-hero-inner,
+.partners-hero-slide .hero-inner{
   width:100% !important;
   height:100% !important;
   display:flex !important;
@@ -170,30 +179,31 @@ html,body{
   align-items:stretch !important;
   justify-content:flex-start !important;
   gap:4px !important;
-  padding:10px 10px 24px !important;
+  padding:7px 8px 18px !important;
 }
 
 .partners-hero-copy{
   width:100% !important;
   max-width:100% !important;
-  flex:0 0 auto !important;
-  padding:0 !important;
+  min-width:0 !important;
   margin:0 !important;
+  padding:0 !important;
+  flex:0 0 auto !important;
 }
 
 .partners-hero-copy .eyebrow{
-  font-size:.48rem !important;
+  font-size:.38rem !important;
 }
 
 .partners-hero-copy h1{
-  font-size:1.03rem !important;
-  line-height:.90 !important;
+  font-size:.82rem !important;
+  line-height:.92 !important;
   margin:1px 0 2px !important;
 }
 
 .partners-hero-copy p{
-  font-size:.50rem !important;
-  line-height:1.12 !important;
+  font-size:.36rem !important;
+  line-height:1.08 !important;
   margin:0 !important;
 }
 
@@ -204,44 +214,46 @@ html,body{
 .partners-hero-logos{
   position:static !important;
   width:100% !important;
-  max-width:100% !important;
-  height:140px !important;
-  display:grid !important;
-  grid-template-rows:repeat(2,66px) !important;
-  grid-auto-flow:column !important;
-  grid-auto-columns:66px !important;
-  grid-template-columns:none !important;
-  gap:5px !important;
-  overflow-x:auto !important;
-  overflow-y:hidden !important;
-  padding:1px 0 3px !important;
+  height:164px !important;
   margin:0 !important;
-  scroll-snap-type:x proximity !important;
-  -webkit-overflow-scrolling:touch !important;
+  padding:0 !important;
+  display:grid !important;
+  grid-template-columns:repeat(7,1fr) !important;
+  grid-template-rows:repeat(3,1fr) !important;
+  grid-auto-flow:row !important;
+  gap:4px !important;
+  overflow:visible !important;
+  align-content:stretch !important;
+  justify-content:stretch !important;
 }
 
 .partners-hero-logos img{
-  display:block !important;
-  width:66px !important;
-  height:66px !important;
-  min-width:66px !important;
-  min-height:66px !important;
-  max-width:66px !important;
-  max-height:66px !important;
-  object-fit:cover !important;
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:none !important;
+  max-height:none !important;
+  aspect-ratio:1/1 !important;
+  object-fit:contain !important;
   object-position:center !important;
   background:#fff !important;
-  padding:0 !important;
-  border-radius:7px !important;
-  box-sizing:border-box !important;
+  padding:2px !important;
+  margin:0 !important;
+  border-radius:4px !important;
   opacity:1 !important;
   visibility:visible !important;
-  scroll-snap-align:start !important;
+  box-sizing:border-box !important;
 }
 
-/* ---------- SLIDE 4: GALERIA ---------- */
-.gallery-hero-slide .hero-inner,
-.gallery-hero-inner{
+/* SLIDE 4 — GALERIA
+   6 quadros inteiros, 3 por linha */
+.gallery-hero-slide .hero-art{
+  display:none !important;
+}
+
+.gallery-hero-inner,
+.gallery-hero-slide .hero-inner{
   width:100% !important;
   height:100% !important;
   display:flex !important;
@@ -249,30 +261,32 @@ html,body{
   align-items:stretch !important;
   justify-content:flex-start !important;
   gap:4px !important;
-  padding:10px 10px 24px !important;
+  padding:7px 8px 18px !important;
 }
 
 .gallery-hero-copy{
   width:100% !important;
   max-width:100% !important;
-  flex:0 0 auto !important;
-  padding:0 !important;
+  min-width:0 !important;
   margin:0 !important;
+  padding:0 !important;
+  flex:0 0 auto !important;
 }
 
 .gallery-hero-copy .eyebrow{
-  font-size:.48rem !important;
+  font-size:.38rem !important;
 }
 
 .gallery-hero-copy h1{
-  font-size:1.03rem !important;
-  line-height:.90 !important;
+  font-size:.82rem !important;
+  line-height:.92 !important;
   margin:1px 0 2px !important;
+  white-space:normal !important;
 }
 
 .gallery-hero-copy p{
-  font-size:.50rem !important;
-  line-height:1.12 !important;
+  font-size:.36rem !important;
+  line-height:1.08 !important;
   margin:0 !important;
 }
 
@@ -283,15 +297,14 @@ html,body{
 .gallery-future-grid{
   position:static !important;
   width:100% !important;
-  max-width:100% !important;
-  height:145px !important;
-  min-height:145px !important;
-  max-height:145px !important;
+  height:166px !important;
+  min-height:166px !important;
+  max-height:166px !important;
+  margin:0 !important;
   display:grid !important;
   grid-template-columns:repeat(3,minmax(0,1fr)) !important;
   grid-template-rows:repeat(2,minmax(0,1fr)) !important;
-  gap:5px !important;
-  margin:0 !important;
+  gap:4px !important;
   transform:none !important;
 }
 
@@ -314,40 +327,69 @@ html,body{
   min-height:0 !important;
   margin:0 !important;
   transform:none !important;
+  padding:4px !important;
+  font-size:.45rem !important;
 }
 
-/* ---------- NAVEGAÇÃO DO BANNER ---------- */
-.exact-hero .hero-arrow{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:30px !important;
-  height:30px !important;
+/* CONTROLES */
+.hero-arrow{
+  width:28px !important;
+  height:28px !important;
+  font-size:18px !important;
   top:50% !important;
   transform:translateY(-50%) !important;
-  font-size:1.45rem !important;
-  z-index:50 !important;
 }
 
-.exact-hero .hero-arrow.prev{left:4px !important;}
-.exact-hero .hero-arrow.next{right:4px !important;}
+.hero-arrow.prev{left:4px !important}
+.hero-arrow.next{right:4px !important}
 
 .hero-dots{
-  bottom:5px !important;
-  z-index:51 !important;
+  bottom:4px !important;
 }
 
 .hero-dots button{
-  width:20px !important;
+  width:16px !important;
   height:3px !important;
 }
 
 .hero-dots button.active{
-  width:34px !important;
+  width:28px !important;
 }
 
-/* ---------- EXTINTORES: MESMA ESCALA VISUAL NO MOBILE ---------- */
-.products-mini-grid .produto-extintor-card .produto-extintor-label{
-  font-size:.88rem !important;
-  padding:6px 8px 5px !important;
+/* PRODUTOS: mesma aparência do nome Extintores */
+.catalog-mini-grid figcaption{
+  display:block !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:0 !important;
+  padding:22px 7px 6px !important;
+  margin:0 !important;
+  background:linear-gradient(transparent,rgba(0,0,0,.92)) !important;
+  color:#fff !important;
+  font-family:"Barlow Condensed",sans-serif !important;
+  font-size:.76rem !important;
+  line-height:1 !important;
+  font-weight:800 !important;
+  text-transform:uppercase !important;
+  letter-spacing:.02em !important;
 }
+
+/* Restante da página */
+.split-wrap{grid-template-columns:1fr !important}
+.split-card{min-height:auto !important}
+.split-body{padding:36px 14px !important}
+.catalog-mini-grid{grid-template-columns:repeat(2,1fr) !important;gap:8px !important}
+.section{padding:50px 0 !important}
+.section-header{display:block !important}
+.about-story-grid,
+.credentials-block,
+.jobs-grid,
+.contact-grid{grid-template-columns:1fr !important}
+.values-grid{grid-template-columns:1fr !important}
+.credentials-cards{grid-template-columns:1fr !important}
+.service-grid{grid-template-columns:1fr !important}
+.service-card.wide{grid-column:auto !important}
+.gallery-grid,
+.video-grid{grid-template-columns:1fr !important}
+.footer-grid{grid-template-columns:1fr 1fr !important}
