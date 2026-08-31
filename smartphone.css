@@ -2516,64 +2516,6 @@ html, body{
 }
 
 
-/* =========================================================
-   AJUSTES SOBRE A BASE "EXTINTOR + SERVIÇOS"
-   - NÃO ALTERA O BANNER
-   - NÃO ALTERA O CARD EXTINTORES
-   - Corrige apenas Guardião de Piscina e BVI
-   - Mantém botão Voltar ao Topo
-   ========================================================= */
-
-/* Guardião de Piscina — remove as bordas/faixas brancas visíveis
-   fazendo um pequeno crop somente nessa imagem */
-.services-mini-grid figure:nth-child(3){
-  position:relative !important;
-  overflow:hidden !important;
-  background:#111 !important;
-}
-.services-mini-grid figure:nth-child(3) img{
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  width:112% !important;
-  height:112% !important;
-  min-width:112% !important;
-  min-height:112% !important;
-  max-width:none !important;
-  max-height:none !important;
-  object-fit:cover !important;
-  object-position:center center !important;
-  transform:translate(-50%,-50%) !important;
-  margin:0 !important;
-  padding:0 !important;
-  border:0 !important;
-}
-
-/* BVI — remove as bordas/faixas brancas visíveis
-   fazendo um pequeno crop somente nessa imagem */
-.services-mini-grid figure:nth-child(4){
-  position:relative !important;
-  overflow:hidden !important;
-  background:#111 !important;
-}
-.services-mini-grid figure:nth-child(4) img{
-  position:absolute !important;
-  left:50% !important;
-  top:50% !important;
-  width:112% !important;
-  height:112% !important;
-  min-width:112% !important;
-  min-height:112% !important;
-  max-width:none !important;
-  max-height:none !important;
-  object-fit:cover !important;
-  object-position:center center !important;
-  transform:translate(-50%,-50%) !important;
-  margin:0 !important;
-  padding:0 !important;
-  border:0 !important;
-}
-
 /* Botão Voltar ao Topo */
 #backToTop.back-to-top{
   position:fixed !important;
@@ -2595,42 +2537,51 @@ html, body{
   visibility:visible !important;
   pointer-events:auto !important;
 }
-/* COMANDO FIRE — CORREÇÃO SOMENTE GUARDIÃO DE PISCINA + BVI
-   Cole ESTE BLOCO NO FINAL do smartphone.css.
-   Não altera banner, produtos, extintores ou outras imagens. */
 
-.services-mini-grid figure:nth-child(3),
-.services-mini-grid figure:nth-child(4){
-  position:relative !important;
-  width:100% !important;
-  aspect-ratio:1 / 1 !important;
-  height:auto !important;
-  overflow:hidden !important;
-  background:transparent !important;
+/* =========================================================
+   COMANDO FIRE — SERVIÇOS MOBILE CONSOLIDADO
+   Todos os cards de Serviços seguem a MESMA regra.
+   Não há regra especial para Guardião ou BVI.
+   NÃO altera o banner.
+   ========================================================= */
+
+.services-mini-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:10px !important;
+  align-items:stretch !important;
 }
 
-.services-mini-grid figure:nth-child(3) img,
-.services-mini-grid figure:nth-child(4) img{
+.services-mini-grid figure{
+  position:relative !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:1 / 1 !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  border-radius:8px !important;
+  background:transparent !important;
+  box-sizing:border-box !important;
+}
+
+.services-mini-grid figure img{
   position:static !important;
   inset:auto !important;
-  left:auto !important;
-  top:auto !important;
-
   display:block !important;
   width:100% !important;
   height:100% !important;
-
   min-width:0 !important;
   min-height:0 !important;
   max-width:100% !important;
   max-height:100% !important;
-
   margin:0 !important;
   padding:0 !important;
   border:0 !important;
-
   object-fit:cover !important;
   object-position:center center !important;
-
   transform:none !important;
+  box-sizing:border-box !important;
 }
+
