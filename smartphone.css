@@ -991,7 +991,7 @@ button,input,select,textarea{font:inherit}
 /* Banner Parceiros: mostrar todos os logos disponíveis, sem cortar por max-height */
 .partners-hero-logos{
   display:grid !important;
-  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  grid-template-columns:repeat(7,minmax(0,1fr)) !important;
   gap:8px !important;
   max-height:none !important;
   overflow:visible !important;
@@ -2480,179 +2480,356 @@ html, body{
   z-index:31 !important;
 }
 
+/* ============================================================
+   COMANDO FIRE — BANNER SMARTPHONE — VERSÃO CONTROLADA
+   Escopo: SOMENTE .exact-hero
+   Objetivo:
+   1) todas as 4 abas com a mesma altura;
+   2) Início mantém a imagem completa e hotspots clicáveis;
+   3) Serviços e Galeria com texto menor, sem cortes;
+   4) Parceiros: texto à esquerda + TODOS os logos à direita;
+   5) nenhuma regra abaixo desta linha altera Produtos/Serviços
+      da página, Galeria da página, Header, Footer ou Desktop.
+   ============================================================ */
 
-/* =========================================================
-   CORREÇÃO 01 — BANNER PRINCIPAL NO SMARTPHONE
-   - altura acompanha exatamente a proporção da imagem 1536x579
-   - remove faixas pretas acima/abaixo
-   - mantém áreas clicáveis sobre os 2 botões desenhados na imagem
-   ========================================================= */
+@media (max-width:640px){
 
-.hero.exact-hero,
-.hero.exact-hero .hero-track,
-.hero.exact-hero .hero-slide{
-  height:calc(100vw * 579 / 1536) !important;
-  min-height:0 !important;
-  max-height:none !important;
-}
+  /* CAIXA ÚNICA DO CARROSSEL */
+  .exact-hero{
+    position:relative !important;
+    width:100% !important;
+    height:calc(100vw * 579 / 1536) !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:hidden !important;
+  }
 
-.exact-option4-picture{
-  inset:0 !important;
-  width:100% !important;
-  height:100% !important;
-}
+  .exact-hero > .hero-track,
+  .exact-hero > .hero-track > .hero-slide{
+    width:100% !important;
+    height:100% !important;
+    min-height:0 !important;
+    max-height:none !important;
+    overflow:hidden !important;
+  }
 
-.exact-option4-picture img{
-  width:100% !important;
-  height:100% !important;
-  object-fit:fill !important;
-  display:block !important;
-}
+  /* =========================================================
+     ABA 1 — INÍCIO
+     ========================================================= */
+  .exact-hero > .hero-track > .exact-option4-slide{
+    position:absolute !important;
+    inset:0 !important;
+    padding:0 !important;
+  }
 
-/* Botão desenhado: FALE COM A EQUIPE */
-.exact-option4-slide .exact-hotspot-team{
-  position:absolute !important;
-  left:5.1% !important;
-  top:79.0% !important;
-  width:14.8% !important;
-  height:10% !important;
-  z-index:50 !important;
-  display:block !important;
-  pointer-events:auto !important;
-  cursor:pointer !important;
-}
+  .exact-hero > .hero-track > .exact-option4-slide .exact-option4-picture{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    margin:0 !important;
+  }
 
-/* Botão desenhado: CONHEÇA OS SERVIÇOS */
-.exact-option4-slide .exact-hotspot-services{
-  position:absolute !important;
-  left:20.8% !important;
-  top:79.0% !important;
-  width:15.2% !important;
-  height:10% !important;
-  z-index:50 !important;
-  display:block !important;
-  pointer-events:auto !important;
-  cursor:pointer !important;
-}
+  .exact-hero > .hero-track > .exact-option4-slide .exact-option4-picture img{
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center center !important;
+    margin:0 !important;
+  }
+
+  /* áreas clicáveis exatamente sobre os dois botões desenhados */
+  .exact-hero > .hero-track > .exact-option4-slide .exact-hotspot-team{
+    position:absolute !important;
+    left:5.1% !important;
+    top:78.5% !important;
+    width:15% !important;
+    height:11% !important;
+    z-index:80 !important;
+    display:block !important;
+    pointer-events:auto !important;
+  }
+
+  .exact-hero > .hero-track > .exact-option4-slide .exact-hotspot-services{
+    position:absolute !important;
+    left:20.7% !important;
+    top:78.5% !important;
+    width:16.2% !important;
+    height:11% !important;
+    z-index:80 !important;
+    display:block !important;
+    pointer-events:auto !important;
+  }
+
+  /* =========================================================
+     ABA 2 — SERVIÇOS
+     Só o segundo slide. Nenhuma outra aba recebe estas regras.
+     ========================================================= */
+  .exact-hero > .hero-track > .hero-slide:nth-child(2) .hero-inner{
+    position:relative !important;
+    z-index:3 !important;
+    width:100% !important;
+    height:100% !important;
+    box-sizing:border-box !important;
+    padding:10px 38px 18px 34px !important;
+    display:flex !important;
+    align-items:center !important;
+  }
+
+  .exact-hero > .hero-track > .hero-slide:nth-child(2) .hero-copy{
+    width:58% !important;
+    max-width:58% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+    display:block !important;
+    overflow:visible !important;
+  }
+
+  .exact-hero > .hero-track > .hero-slide:nth-child(2) .eyebrow{
+    font-size:6px !important;
+    line-height:1 !important;
+    letter-spacing:.12em !important;
+    margin:0 0 3px !important;
+  }
+
+  .exact-hero > .hero-track > .hero-slide:nth-child(2) h1{
+    font-size:clamp(16px,4.7vw,22px) !important;
+    line-height:.90 !important;
+    margin:0 0 4px !important;
+    max-width:100% !important;
+    overflow:visible !important;
+  }
+
+  .exact-hero > .hero-track > .hero-slide:nth-child(2) p{
+    font-size:clamp(6px,1.55vw,8px) !important;
+    line-height:1.16 !important;
+    margin:0 !important;
+    max-width:100% !important;
+  }
+
+  .exact-hero > .hero-track > .hero-slide:nth-child(2) .hero-actions{
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    gap:4px !important;
+    margin:5px 0 0 !important;
+    padding:0 !important;
+    min-height:0 !important;
+  }
+
+  .exact-hero > .hero-track > .hero-slide:nth-child(2) .btn{
+    min-height:0 !important;
+    height:auto !important;
+    padding:4px 6px !important;
+    border-radius:4px !important;
+    font-size:6px !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+  }
+
+  /* =========================================================
+     ABA 3 — PARCEIROS
+     Só .partners-hero-slide.
+     Texto à esquerda e 22 imagens existentes no HTML à direita.
+     (Se houver 21 ou 22 no HTML, todas são exibidas.)
+     ========================================================= */
+  .exact-hero > .hero-track > .partners-hero-slide .partners-hero-inner{
+    position:relative !important;
+    z-index:3 !important;
+    width:100% !important;
+    height:100% !important;
+    box-sizing:border-box !important;
+    padding:8px 34px 16px 30px !important;
+    display:grid !important;
+    grid-template-columns:38% 58% !important;
+    column-gap:4% !important;
+    align-items:center !important;
+    overflow:hidden !important;
+  }
+
+  .exact-hero > .hero-track > .partners-hero-slide .partners-hero-copy{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+    display:block !important;
+    text-align:left !important;
+    overflow:visible !important;
+  }
+
+  .exact-hero > .hero-track > .partners-hero-slide .partners-hero-copy .eyebrow{
+    font-size:5.5px !important;
+    line-height:1 !important;
+    letter-spacing:.11em !important;
+    margin:0 0 2px !important;
+  }
+
+  .exact-hero > .hero-track > .partners-hero-slide .partners-hero-copy h1{
+    font-size:clamp(12px,3.3vw,17px) !important;
+    line-height:.89 !important;
+    margin:0 0 3px !important;
+    max-width:100% !important;
+    overflow:visible !important;
+  }
+
+  .exact-hero > .hero-track > .partners-hero-slide .partners-hero-copy p{
+    font-size:clamp(5px,1.25vw,7px) !important;
+    line-height:1.12 !important;
+    margin:0 !important;
+    max-width:100% !important;
+  }
+
+  .exact-hero > .hero-track > .partners-hero-slide .partners-hero-copy .hero-actions{
+    display:flex !important;
+    margin:4px 0 0 !important;
+    padding:0 !important;
+    min-height:0 !important;
+  }
+
+  .exact-hero > .hero-track > .partners-hero-slide .partners-hero-copy .btn{
+    min-height:0 !important;
+    height:auto !important;
+    padding:4px 6px !important;
+    border-radius:4px !important;
+    font-size:5.5px !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+  }
+
+  .exact-hero > .hero-track > .partners-hero-slide .partners-hero-logos{
+    position:static !important;
+    inset:auto !important;
+    width:100% !important;
+    height:78% !important;
+    max-width:none !important;
+    max-height:78% !important;
+    margin:0 !important;
+    padding:4px !important;
+    box-sizing:border-box !important;
+    display:grid !important;
+    grid-template-columns:repeat(7,minmax(0,1fr)) !important;
+    grid-auto-rows:minmax(0,1fr) !important;
+    gap:2px !important;
+    align-content:center !important;
+    align-items:center !important;
+    justify-items:center !important;
+    overflow:visible !important;
+    background:rgba(255,255,255,.93) !important;
+    border-radius:6px !important;
+  }
+
+  .exact-hero > .hero-track > .partners-hero-slide .partners-hero-logos img{
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    aspect-ratio:auto !important;
+    object-fit:contain !important;
+    object-position:center !important;
+    margin:0 !important;
+    padding:1px !important;
+    box-sizing:border-box !important;
+    border-radius:2px !important;
+    background:#fff !important;
+  }
 
 
-/* =========================================================
-   CORREÇÃO — SOMENTE ABA PARCEIROS / SMARTPHONE
-   Não altera Início, Serviços, Galeria, Produtos ou Desktop.
-   ========================================================= */
+  /* O HTML atual traz uma imagem extra no banner; mantém os 21 parceiros confirmados. */
+  .exact-hero > .hero-track > .partners-hero-slide .partners-hero-logos img[src="festival-podrao.jpg"]{
+    display:none !important;
+  }
 
-/* Mantém a caixa da aba Parceiros dentro da altura já definida do carrossel */
-.hero-slide.partners-slide .partners-hero-inner,
-.hero-slide:has(.partners-hero-logos) .partners-hero-inner{
-  width:100% !important;
-  height:100% !important;
-  padding:0 6.5% !important;
-  display:grid !important;
-  grid-template-columns:39% 57% !important;
-  column-gap:4% !important;
-  align-items:center !important;
-  overflow:hidden !important;
-}
+  /* =========================================================
+     ABA 4 — GALERIA
+     Só o quarto slide.
+     ========================================================= */
+  .exact-hero > .hero-track > .hero-slide:nth-child(4) .hero-inner{
+    position:relative !important;
+    z-index:3 !important;
+    width:100% !important;
+    height:100% !important;
+    box-sizing:border-box !important;
+    padding:10px 38px 18px 34px !important;
+    display:flex !important;
+    align-items:center !important;
+  }
 
-/* Texto menor, à esquerda, sem cortes */
-.hero-slide.partners-slide .partners-hero-copy,
-.hero-slide:has(.partners-hero-logos) .partners-hero-copy{
-  width:100% !important;
-  max-width:100% !important;
-  min-width:0 !important;
-  padding:0 !important;
-  margin:0 !important;
-  text-align:left !important;
-  align-items:flex-start !important;
-  justify-content:center !important;
-}
+  .exact-hero > .hero-track > .hero-slide:nth-child(4) .hero-copy{
+    width:52% !important;
+    max-width:52% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+    display:block !important;
+    overflow:visible !important;
+  }
 
-.hero-slide.partners-slide .partners-hero-copy .eyebrow,
-.hero-slide:has(.partners-hero-logos) .partners-hero-copy .eyebrow{
-  font-size:clamp(6px,1.55vw,9px) !important;
-  line-height:1 !important;
-  margin:0 0 3px !important;
-}
+  .exact-hero > .hero-track > .hero-slide:nth-child(4) .eyebrow{
+    font-size:6px !important;
+    line-height:1 !important;
+    letter-spacing:.12em !important;
+    margin:0 0 3px !important;
+  }
 
-.hero-slide.partners-slide .partners-hero-copy h1,
-.hero-slide:has(.partners-hero-logos) .partners-hero-copy h1{
-  font-size:clamp(13px,3.8vw,22px) !important;
-  line-height:.9 !important;
-  letter-spacing:-.02em !important;
-  margin:0 0 4px !important;
-  max-width:100% !important;
-  overflow:visible !important;
-}
+  .exact-hero > .hero-track > .hero-slide:nth-child(4) h1{
+    font-size:clamp(16px,4.7vw,22px) !important;
+    line-height:.90 !important;
+    margin:0 0 4px !important;
+    max-width:100% !important;
+  }
 
-.hero-slide.partners-slide .partners-hero-copy p,
-.hero-slide:has(.partners-hero-logos) .partners-hero-copy p{
-  font-size:clamp(6px,1.5vw,9px) !important;
-  line-height:1.12 !important;
-  margin:0 !important;
-  max-width:100% !important;
-}
+  .exact-hero > .hero-track > .hero-slide:nth-child(4) p{
+    font-size:clamp(6px,1.55vw,8px) !important;
+    line-height:1.16 !important;
+    margin:0 !important;
+    max-width:100% !important;
+  }
 
-.hero-slide.partners-slide .partners-hero-copy .btn,
-.hero-slide:has(.partners-hero-logos) .partners-hero-copy .btn{
-  margin-top:5px !important;
-  padding:4px 7px !important;
-  font-size:clamp(6px,1.4vw,8px) !important;
-  line-height:1 !important;
-  min-height:0 !important;
-}
+  .exact-hero > .hero-track > .hero-slide:nth-child(4) .hero-actions{
+    display:flex !important;
+    margin:5px 0 0 !important;
+    padding:0 !important;
+    min-height:0 !important;
+  }
 
-/* 21 parceiros à direita: 7 colunas x 3 linhas.
-   Usa as imagens reais que já existem no HTML. */
-.hero-slide.partners-slide .partners-hero-logos,
-.hero-slide:has(.partners-hero-logos) .partners-hero-logos{
-  width:100% !important;
-  max-width:100% !important;
-  height:72% !important;
-  max-height:72% !important;
-  margin:0 !important;
-  padding:5px !important;
-  display:grid !important;
-  grid-template-columns:repeat(7,minmax(0,1fr)) !important;
-  grid-template-rows:repeat(3,minmax(0,1fr)) !important;
-  gap:3px !important;
-  align-content:center !important;
-  align-items:center !important;
-  justify-items:center !important;
-  overflow:hidden !important;
-  background:rgba(255,255,255,.96) !important;
-  border-radius:8px !important;
-}
+  .exact-hero > .hero-track > .hero-slide:nth-child(4) .btn{
+    min-height:0 !important;
+    height:auto !important;
+    padding:4px 6px !important;
+    border-radius:4px !important;
+    font-size:6px !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+  }
 
-.hero-slide.partners-slide .partners-hero-logos > *,
-.hero-slide:has(.partners-hero-logos) .partners-hero-logos > *{
-  min-width:0 !important;
-  width:100% !important;
-  height:100% !important;
-  margin:0 !important;
-  padding:0 !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-}
+  /* NAVEGAÇÃO — mesma posição nas 4 abas */
+  .exact-hero > .hero-arrow{
+    position:absolute !important;
+    top:50% !important;
+    transform:translateY(-50%) !important;
+    width:26px !important;
+    height:26px !important;
+    z-index:100 !important;
+  }
 
-.hero-slide.partners-slide .partners-hero-logos img,
-.hero-slide:has(.partners-hero-logos) .partners-hero-logos img{
-  display:block !important;
-  width:100% !important;
-  height:100% !important;
-  max-width:100% !important;
-  max-height:100% !important;
-  object-fit:contain !important;
-  margin:0 !important;
-  padding:1px !important;
-}
+  .exact-hero > .hero-arrow.prev{ left:4px !important; }
+  .exact-hero > .hero-arrow.next{ right:4px !important; }
 
-/* Não deixa as setas cobrirem texto ou logos nesta aba */
-.hero-slide.partners-slide .hero-arrow.prev,
-.hero-slide:has(.partners-hero-logos) .hero-arrow.prev{
-  left:5px !important;
-}
-.hero-slide.partners-slide .hero-arrow.next,
-.hero-slide:has(.partners-hero-logos) .hero-arrow.next{
-  right:5px !important;
+  .exact-hero > .hero-dots{
+    position:absolute !important;
+    left:50% !important;
+    bottom:4px !important;
+    transform:translateX(-50%) !important;
+    margin:0 !important;
+    z-index:100 !important;
+  }
 }
