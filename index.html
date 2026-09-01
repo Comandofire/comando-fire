@@ -446,5 +446,66 @@
   <script src="script.js"></script>
 
   <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+
+<script>
+(function(){
+  function iniciarComandoFireDesktop(){
+    /* BOTÃO VOLTAR AO TOPO */
+    var subir = document.getElementById('backToTop');
+    if (subir){
+      subir.onclick = function(e){
+        e.preventDefault();
+        window.scrollTo({top:0, left:0, behavior:'smooth'});
+      };
+    }
+
+    /* PARCEIROS — movimento automático da esquerda para a direita */
+    var faixa = document.querySelector('.partners-section .partners-marquee');
+    var trilho = document.querySelector('.partners-section .partners-marquee-track');
+
+    if (faixa && trilho && window.matchMedia('(min-width: 981px)').matches){
+      /* A lista possui 21 logos repetidos duas vezes para criar loop contínuo. */
+      function preparar(){
+        var metade = trilho.scrollWidth / 2;
+        if (metade > 0){
+          faixa.scrollLeft = metade;
+        }
+      }
+
+      preparar();
+      window.addEventListener('load', preparar);
+      window.addEventListener('resize', preparar);
+
+      var ultimo = performance.now();
+      var velocidade = 42; /* pixels por segundo */
+
+      function mover(agora){
+        var dt = (agora - ultimo) / 1000;
+        ultimo = agora;
+
+        var metade = trilho.scrollWidth / 2;
+        if (metade > 0){
+          faixa.scrollLeft -= velocidade * dt;
+
+          if (faixa.scrollLeft <= 1){
+            faixa.scrollLeft += metade;
+          }
+        }
+
+        requestAnimationFrame(mover);
+      }
+
+      requestAnimationFrame(mover);
+    }
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', iniciarComandoFireDesktop);
+  } else {
+    iniciarComandoFireDesktop();
+  }
+})();
+</script>
+
 </body>
 </html>
