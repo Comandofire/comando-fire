@@ -2612,3 +2612,194 @@ body{
   to{ transform:translateX(0); }
 }
 
+/* =========================================================
+   COMANDO FIRE — PARCEIROS DESKTOP — CORREÇÃO 2,5 CM
+   Banner: 21 logos em 3 linhas x 7, até 2,5 cm x 2,5 cm
+   Faixa inferior: movimento automático contínuo
+   ========================================================= */
+@media (min-width: 981px){
+
+  /* ===== BANNER PARCEIROS ===== */
+  .hero.exact-hero > .hero-track > .partners-hero-slide .partners-hero-inner{
+    width:min(1500px,calc(100% - 100px)) !important;
+    max-width:1500px !important;
+    margin:0 auto !important;
+    grid-template-columns:38% 62% !important;
+    gap:28px !important;
+    align-items:center !important;
+  }
+
+  .hero.exact-hero > .hero-track > .partners-hero-slide .partners-hero-copy{
+    position:relative !important;
+    z-index:5 !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .hero.exact-hero > .hero-track > .partners-hero-slide .partners-hero-logos{
+    --partner-size:2.5cm;
+    display:grid !important;
+    grid-template-columns:repeat(7,var(--partner-size)) !important;
+    grid-template-rows:repeat(3,var(--partner-size)) !important;
+    grid-auto-flow:row !important;
+    gap:8px !important;
+
+    width:auto !important;
+    height:auto !important;
+    max-width:100% !important;
+    max-height:none !important;
+
+    margin:0 0 0 auto !important;
+    padding:0 !important;
+
+    justify-content:end !important;
+    align-content:center !important;
+    justify-items:center !important;
+    align-items:center !important;
+
+    overflow:visible !important;
+    background:transparent !important;
+    position:relative !important;
+    z-index:2 !important;
+  }
+
+  .hero.exact-hero > .hero-track > .partners-hero-slide .partners-hero-logos img{
+    display:block !important;
+    width:2.5cm !important;
+    height:2.5cm !important;
+    min-width:2.5cm !important;
+    min-height:2.5cm !important;
+    max-width:2.5cm !important;
+    max-height:2.5cm !important;
+
+    aspect-ratio:1 / 1 !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+
+    padding:6px !important;
+    margin:0 !important;
+    box-sizing:border-box !important;
+
+    background:#fff !important;
+    border-radius:8px !important;
+    box-shadow:0 5px 14px rgba(0,0,0,.12) !important;
+  }
+
+  .hero.exact-hero > .hero-track > .partners-hero-slide .partners-hero-logos img[src="america-rj.jpg"]{
+    padding:1px !important;
+  }
+
+  /* ===== FAIXA PARCEIROS ABAIXO ===== */
+  .partners-section .partners-marquee{
+    position:relative !important;
+    width:100% !important;
+    overflow:hidden !important;
+    padding:8px 0 !important;
+  }
+
+  .partners-section .partners-marquee-track{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    gap:14px !important;
+
+    width:max-content !important;
+    max-width:none !important;
+    margin:0 !important;
+
+    grid-template-columns:none !important;
+    grid-template-rows:none !important;
+
+    animation-name:comando-partners-auto !important;
+    animation-duration:24s !important;
+    animation-timing-function:linear !important;
+    animation-iteration-count:infinite !important;
+    animation-play-state:running !important;
+
+    transform:translate3d(0,0,0);
+    will-change:transform !important;
+  }
+
+  .partners-section .partners-marquee:hover .partners-marquee-track{
+    animation-play-state:running !important;
+  }
+
+  .partners-section .partner-logo-card{
+    flex:0 0 180px !important;
+    width:180px !important;
+    height:90px !important;
+    min-width:180px !important;
+    min-height:90px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    padding:0 !important;
+    overflow:hidden !important;
+    background:#fff !important;
+    border-radius:8px !important;
+    box-shadow:0 5px 18px rgba(0,0,0,.20) !important;
+  }
+
+  .partners-section .partner-logo-card img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    padding:6px !important;
+    box-sizing:border-box !important;
+    background:#fff !important;
+  }
+
+  .partners-section .partner-logo-card img[src="america-rj.jpg"]{
+    padding:2px !important;
+  }
+}
+
+/* Movimento contínuo: a primeira sequência sai e a segunda entra */
+@keyframes comando-partners-auto{
+  from{
+    transform:translate3d(0,0,0);
+  }
+  to{
+    transform:translate3d(calc(-50% - 7px),0,0);
+  }
+}
+
+/* =========================================================
+   COMANDO FIRE — BOTÃO VOLTAR AO TOPO — DESKTOP
+   Restaura o botão ↑ sem alterar parceiros ou smartphone.
+   ========================================================= */
+@media (min-width:981px){
+  .back-to-top,
+  #backToTop{
+    position:fixed !important;
+    right:22px !important;
+    bottom:150px !important;
+    width:48px !important;
+    height:48px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:0 !important;
+    margin:0 !important;
+    border:1px solid rgba(255,85,0,.65) !important;
+    border-radius:50% !important;
+    background:#111 !important;
+    color:#fff !important;
+    font-size:25px !important;
+    font-weight:900 !important;
+    line-height:1 !important;
+    cursor:pointer !important;
+    z-index:50000 !important;
+    box-shadow:0 7px 20px rgba(0,0,0,.28) !important;
+  }
+
+  .back-to-top:hover,
+  #backToTop:hover{
+    background:#ff5500 !important;
+    color:#fff !important;
+  }
+}
+
