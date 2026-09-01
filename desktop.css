@@ -2904,3 +2904,64 @@ body{
   }
 }
 
+/* =========================================================
+   COMANDO FIRE — PARCEIROS + BOTÃO SUBIR — CONTROLE FINAL
+   O movimento inferior é controlado pelo JavaScript do index.
+   ========================================================= */
+@media (min-width:981px){
+  .partners-section .partners-marquee{
+    width:100% !important;
+    overflow:hidden !important;
+    position:relative !important;
+  }
+
+  .partners-section .partners-marquee-track{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    gap:14px !important;
+    width:max-content !important;
+    max-width:none !important;
+    margin:0 !important;
+
+    animation:none !important;
+    transform:none !important;
+  }
+
+  .partners-section .partners-marquee:hover .partners-marquee-track{
+    animation:none !important;
+  }
+
+  .back-to-top,
+  #backToTop{
+    position:fixed !important;
+    right:22px !important;
+    bottom:150px !important;
+    width:50px !important;
+    height:50px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+    pointer-events:auto !important;
+    border:2px solid #ff5500 !important;
+    border-radius:50% !important;
+    background:#111 !important;
+    color:#fff !important;
+    font-size:27px !important;
+    font-weight:900 !important;
+    line-height:1 !important;
+    cursor:pointer !important;
+    z-index:60000 !important;
+    box-shadow:0 8px 24px rgba(0,0,0,.32) !important;
+  }
+
+  .back-to-top:hover,
+  #backToTop:hover{
+    background:#ff5500 !important;
+    color:#fff !important;
+  }
+}
+
