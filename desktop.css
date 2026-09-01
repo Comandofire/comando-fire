@@ -2338,3 +2338,121 @@ body{
   }
 }
 
+/* =========================================================
+   COMANDO FIRE — PARCEIROS DESKTOP FINAL
+   21 parceiros = 3 linhas x 7 colunas
+   cards quadrados, até 5cm x 5cm
+   ========================================================= */
+@media (min-width: 981px){
+
+  /* BANNER PARCEIROS */
+  .hero.exact-hero > .hero-track > .partners-hero-slide .partners-hero-inner{
+    width:min(1600px,calc(100% - 80px)) !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    grid-template-columns:30% 70% !important;
+    gap:28px !important;
+    align-items:center !important;
+  }
+
+  .hero.exact-hero > .hero-track > .partners-hero-slide .partners-hero-logos{
+    --partner-size:min(5cm, calc((68vw - 72px) / 7));
+    display:grid !important;
+    grid-template-columns:repeat(7,var(--partner-size)) !important;
+    grid-template-rows:repeat(3,var(--partner-size)) !important;
+    grid-auto-flow:row !important;
+    gap:10px !important;
+    width:100% !important;
+    height:auto !important;
+    max-width:none !important;
+    max-height:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    align-content:center !important;
+    justify-content:end !important;
+    align-items:center !important;
+    justify-items:center !important;
+    overflow:visible !important;
+    background:transparent !important;
+  }
+
+  .hero.exact-hero > .hero-track > .partners-hero-slide .partners-hero-logos img{
+    width:var(--partner-size) !important;
+    height:var(--partner-size) !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    max-width:none !important;
+    max-height:none !important;
+    aspect-ratio:1 / 1 !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    padding:8% !important;
+    margin:0 !important;
+    background:#fff !important;
+    border-radius:10px !important;
+    box-shadow:0 7px 18px rgba(0,0,0,.13) !important;
+    box-sizing:border-box !important;
+  }
+
+  /* SEÇÃO PARCEIROS ABAIXO */
+  .partners-section .partners-marquee{
+    width:100% !important;
+    overflow:visible !important;
+    padding:0 !important;
+  }
+
+  .partners-section .partners-marquee::before,
+  .partners-section .partners-marquee::after{
+    display:none !important;
+  }
+
+  .partners-section .partners-marquee-track{
+    --partner-size:min(5cm, calc((100vw - 180px) / 7));
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    display:grid !important;
+    grid-template-columns:repeat(7,var(--partner-size)) !important;
+    grid-template-rows:repeat(3,var(--partner-size)) !important;
+    justify-content:center !important;
+    align-content:center !important;
+    gap:12px !important;
+    animation:none !important;
+    transform:none !important;
+  }
+
+  .partners-section .partner-logo-card{
+    width:var(--partner-size) !important;
+    height:var(--partner-size) !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    flex:none !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    padding:0 !important;
+    background:#fff !important;
+    border-radius:10px !important;
+    overflow:hidden !important;
+    box-shadow:0 7px 18px rgba(0,0,0,.16) !important;
+  }
+
+  .partners-section .partner-logo-card img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    padding:8% !important;
+    box-sizing:border-box !important;
+    background:#fff !important;
+  }
+
+  /* América: escudo maior e centralizado */
+  .partners-hero-logos img[src="america-rj.jpg"],
+  .partners-section img[src="america-rj.jpg"]{
+    padding:2% !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+  }
+}
+
