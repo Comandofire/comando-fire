@@ -2285,3 +2285,56 @@ body{
   }
 }
 
+/* =========================================================
+   COMANDO FIRE — CORREÇÃO BANNER DESKTOP EM TELA LARGA
+   Faz o carrossel ocupar SEMPRE 100% da largura da janela,
+   eliminando a faixa branca à direita.
+   Não altera smartphone.
+   ========================================================= */
+@media (min-width: 981px){
+
+  .hero.exact-hero{
+    position:relative !important;
+    left:50% !important;
+    right:auto !important;
+    width:100vw !important;
+    max-width:none !important;
+    margin-left:-50vw !important;
+    margin-right:0 !important;
+    overflow:hidden !important;
+  }
+
+  .hero.exact-hero > .hero-track{
+    position:relative !important;
+    width:100vw !important;
+    max-width:none !important;
+    height:100% !important;
+    overflow:hidden !important;
+  }
+
+  .hero.exact-hero > .hero-track > .hero-slide{
+    position:absolute !important;
+    inset:0 !important;
+    width:100vw !important;
+    max-width:none !important;
+    height:100% !important;
+    overflow:hidden !important;
+  }
+
+  .hero.exact-hero > .hero-track > .hero-slide > .hero-art,
+  .hero.exact-hero > .hero-track > .hero-slide > .exact-option4-picture{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    max-width:none !important;
+    height:100% !important;
+  }
+
+  .hero.exact-hero > .hero-track > .hero-slide .hero-inner{
+    width:min(1180px,calc(100% - 40px)) !important;
+    max-width:1180px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+}
+
