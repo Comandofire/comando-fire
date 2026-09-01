@@ -2965,3 +2965,73 @@ body{
   }
 }
 
+/* =========================================================
+   COMANDO FIRE — PRODUTOS DESKTOP — TEXTO SEM CORTE
+   Mantém os cards no mesmo tamanho, mas mostra a imagem inteira.
+   Extintores recebe legenda própria.
+   ========================================================= */
+@media (min-width:981px){
+
+  /* Mantém os 6 cards de Produtos iguais entre si */
+  .products-mini-grid figure{
+    position:relative !important;
+    width:100% !important;
+    aspect-ratio:1 / 1 !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    overflow:hidden !important;
+    background:#111 !important;
+    border-radius:7px !important;
+  }
+
+  /* Produtos com texto já desenhado na própria imagem:
+     mostra a imagem inteira, sem cortar as letras */
+  .products-mini-grid figure img{
+    position:static !important;
+    inset:auto !important;
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    transform:none !important;
+    background:#111 !important;
+  }
+
+  /* As outras imagens já têm o nome embutido */
+  .products-mini-grid figure:not(.extintor-card) figcaption{
+    display:none !important;
+  }
+
+  /* Extintores não tem o nome desenhado na imagem:
+     restaura somente a legenda EXTINTORES */
+  .products-mini-grid .extintor-card figcaption{
+    display:block !important;
+    position:absolute !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    z-index:20 !important;
+    margin:0 !important;
+    padding:10px 8px !important;
+    background:linear-gradient(transparent,rgba(0,0,0,.96)) !important;
+    color:#fff !important;
+    font-family:"Barlow Condensed",Arial,sans-serif !important;
+    font-size:clamp(16px,1.35vw,24px) !important;
+    line-height:1 !important;
+    font-weight:900 !important;
+    text-transform:uppercase !important;
+    text-align:center !important;
+    letter-spacing:.01em !important;
+    text-shadow:0 2px 4px rgba(0,0,0,.75) !important;
+  }
+}
+
