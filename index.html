@@ -467,8 +467,8 @@
       /* A lista possui 21 logos repetidos duas vezes para criar loop contínuo. */
       function preparar(){
         var metade = trilho.scrollWidth / 2;
-        if (metade > 0){
-          faixa.scrollLeft = metade;
+        if (metade > 0 && faixa.scrollLeft >= metade){
+          faixa.scrollLeft = 0;
         }
       }
 
@@ -485,10 +485,10 @@
 
         var metade = trilho.scrollWidth / 2;
         if (metade > 0){
-          faixa.scrollLeft -= velocidade * dt;
+          faixa.scrollLeft += velocidade * dt;
 
-          if (faixa.scrollLeft <= 1){
-            faixa.scrollLeft += metade;
+          if (faixa.scrollLeft >= metade){
+            faixa.scrollLeft -= metade;
           }
         }
 
