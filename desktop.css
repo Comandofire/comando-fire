@@ -2232,74 +2232,49 @@ body{
 }
 
 /* =========================================================
-   COMANDO FIRE — DESKTOP: PRODUTOS + SERVIÇOS EM ESQUADRO
-   Ambos os lados usam 3 colunas x 2 linhas e cards idênticos.
-   Este bloco é apenas para desktop.
+   COMANDO FIRE — CORREÇÃO FINAL DESKTOP
+   PRODUTOS E SERVIÇOS: 3 x 2, TODOS DO MESMO TAMANHO
    ========================================================= */
-
 @media (min-width: 981px){
 
-  .split-with-images{
-    align-items:stretch !important;
-  }
-
-  .split-with-images .split-card{
-    flex:1 1 50% !important;
-    min-width:0 !important;
-  }
-
-  .split-with-images .split-card:hover,
-  .split-with-images .split-card:focus,
-  .split-with-images:has(.split-card:hover) .split-card:not(:hover){
-    flex:1 1 50% !important;
-  }
-
-  .split-with-images .split-body{
-    width:100% !important;
-    max-width:none !important;
-    padding:42px 5% 38px !important;
-  }
-
-  .split-with-images .catalog-mini-grid,
-  .split-with-images .products-mini-grid,
-  .split-with-images .services-mini-grid{
+  .products-mini-grid,
+  .services-mini-grid{
     display:grid !important;
     grid-template-columns:repeat(3,minmax(0,1fr)) !important;
-    grid-auto-rows:1fr !important;
+    grid-auto-rows:auto !important;
     gap:10px !important;
     width:100% !important;
-    align-items:stretch !important;
   }
 
-  .split-with-images .catalog-mini-grid figure,
-  .split-with-images .products-mini-grid figure,
-  .split-with-images .services-mini-grid figure{
+  .products-mini-grid figure,
+  .services-mini-grid figure{
     position:relative !important;
     width:100% !important;
     height:auto !important;
-    aspect-ratio:4 / 3 !important;
+    aspect-ratio:1 / 1 !important;
     min-width:0 !important;
     min-height:0 !important;
+    max-width:none !important;
+    max-height:none !important;
     margin:0 !important;
     padding:0 !important;
     overflow:hidden !important;
     border-radius:7px !important;
     box-sizing:border-box !important;
     background:#111 !important;
-    box-shadow:0 5px 16px rgba(0,0,0,.14) !important;
   }
 
-  .split-with-images .catalog-mini-grid figure img,
-  .split-with-images .products-mini-grid figure img,
-  .split-with-images .services-mini-grid figure img{
-    position:static !important;
+  .products-mini-grid figure img,
+  .services-mini-grid figure img{
+    position:absolute !important;
+    inset:0 !important;
     display:block !important;
     width:100% !important;
     height:100% !important;
     min-width:0 !important;
     min-height:0 !important;
-    max-width:100% !important;
-    max-height:100% !important;
+    max-width:none !important;
+    max-height:none !important;
     margin:0 !important;
     padding:0 !important;
     border:0 !important;
