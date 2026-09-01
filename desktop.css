@@ -3147,3 +3147,106 @@ body{
   }
 }
 
+/* =========================================================
+   COMANDO FIRE — PRODUTOS + SERVIÇOS — CORREÇÃO DEFINITIVA
+   Desktop somente
+   - 3 colunas x 2 linhas
+   - todos os 12 cards iguais
+   - foto limpa
+   - faixa preta fixa embaixo
+   - nome branco centralizado
+   - nenhuma regra especial para Extintores
+   ========================================================= */
+@media (min-width: 641px){
+
+  .products-mini-grid,
+  .services-mini-grid{
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    grid-template-rows:repeat(2,minmax(0,1fr)) !important;
+    gap:10px !important;
+    width:100% !important;
+    margin-top:20px !important;
+    padding:0 !important;
+  }
+
+  .products-mini-grid figure,
+  .services-mini-grid figure,
+  .products-mini-grid .extintor-card{
+    position:relative !important;
+    width:100% !important;
+    aspect-ratio:1 / 1 !important;
+    height:auto !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    max-width:none !important;
+    max-height:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    overflow:hidden !important;
+    border-radius:8px !important;
+    background:#111 !important;
+    box-sizing:border-box !important;
+  }
+
+  .products-mini-grid figure img,
+  .services-mini-grid figure img,
+  .products-mini-grid .extintor-card img,
+  .services-mini-grid figure:nth-child(3) img,
+  .services-mini-grid figure:nth-child(4) img{
+    position:absolute !important;
+    inset:0 0 48px 0 !important;
+    display:block !important;
+    width:100% !important;
+    height:calc(100% - 48px) !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    max-width:none !important;
+    max-height:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    border:0 !important;
+    object-fit:cover !important;
+    object-position:center center !important;
+    transform:none !important;
+    background:#111 !important;
+    box-sizing:border-box !important;
+  }
+
+  .products-mini-grid figure figcaption,
+  .services-mini-grid figure figcaption,
+  .products-mini-grid figure:not(.extintor-card) figcaption,
+  .products-mini-grid .extintor-card figcaption,
+  .split-card.services figcaption,
+  .services .catalog-mini-grid figcaption{
+    display:flex !important;
+    position:absolute !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    top:auto !important;
+    z-index:999 !important;
+    width:100% !important;
+    height:48px !important;
+    min-height:48px !important;
+    margin:0 !important;
+    padding:0 8px !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background:#090909 !important;
+    background-image:none !important;
+    color:#ffffff !important;
+    font-family:"Barlow Condensed",Arial,sans-serif !important;
+    font-size:16px !important;
+    font-weight:800 !important;
+    line-height:1.05 !important;
+    letter-spacing:0 !important;
+    text-transform:uppercase !important;
+    text-align:center !important;
+    text-shadow:none !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    box-sizing:border-box !important;
+  }
+}
+
