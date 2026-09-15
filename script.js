@@ -66,7 +66,6 @@ document.querySelectorAll("[data-close]").forEach(el=>el.addEventListener("click
   document.body.classList.remove("modal-open");
 }));
 
-// Aplicação dos dados de contato quando forem preenchidos no CONFIG.
 document.getElementById("contactAddress").textContent=CONFIG.address;
 document.getElementById("contactInstagram").textContent=CONFIG.instagramHandle;
 const contactEmail = document.getElementById("contactEmail");
@@ -110,8 +109,6 @@ document.addEventListener("keydown",e=>{
 
 document.getElementById("year").textContent=new Date().getFullYear();
 
-
-// V7 - Voltar ao topo e navegação suave
 const backToTopBtn = document.getElementById("backToTop");
 if (backToTopBtn) {
   window.addEventListener("scroll", () => {
@@ -135,3 +132,64 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     window.scrollTo({ top, behavior: "smooth" });
   });
 });
+
+// Correção isolada: Trabalhe Conosco no smartphone.
+// Injetada por JS para não alterar o layout desktop nem as demais seções mobile.
+if (window.matchMedia("(max-width: 640px)").matches) {
+  const jobsMobileFix = document.createElement("style");
+  jobsMobileFix.id = "jobs-mobile-width-fix";
+  jobsMobileFix.textContent = `
+    #trabalhe.jobs { overflow: hidden !important; }
+    #trabalhe .container.jobs-grid {
+      width: calc(100% - 32px) !important;
+      max-width: calc(100% - 32px) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 24px !important;
+      min-width: 0 !important;
+    }
+    #trabalhe .jobs-grid > * {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+    }
+    #trabalhe .jobs-form {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      padding: 18px !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+    #trabalhe .jobs-form input,
+    #trabalhe .jobs-form select,
+    #trabalhe .jobs-form button {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+    #trabalhe .file-label {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 8px !important;
+      align-items: start !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+    #trabalhe .file-label input[type="file"] {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      padding: 0 !important;
+      font-size: .78rem !important;
+      overflow: hidden !important;
+    }
+  `;
+  document.head.appendChild(jobsMobileFix);
+}
