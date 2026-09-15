@@ -133,6 +133,15 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
+// Ajuste da Galeria em desktop e smartphone: título branco e remoção do texto auxiliar.
+const gallerySection = document.getElementById("galeria");
+if (gallerySection) {
+  const galleryTitle = gallerySection.querySelector(".section-header h2");
+  if (galleryTitle) galleryTitle.style.setProperty("color", "#fff", "important");
+  const galleryAuxText = gallerySection.querySelector(".section-header > p");
+  if (galleryAuxText) galleryAuxText.remove();
+}
+
 // Correção isolada: Trabalhe Conosco no smartphone.
 if (window.matchMedia("(max-width: 640px)").matches) {
   const jobsMobileFix = document.createElement("style");
@@ -157,9 +166,6 @@ if (window.matchMedia("(max-width: 640px)").matches) {
   `;
   document.head.appendChild(jobsMobileFix);
 
-  // As imagens existem no repositório, mas alguns navegadores móveis não estavam
-  // resolvendo corretamente os caminhos relativos publicados pelo GitHub Pages.
-  // No smartphone, usa a origem RAW do próprio repositório como fonte confiável.
   const rawBase = "https://raw.githubusercontent.com/Comandofire/comando-fire/main/";
   const localImageNames = new Set([
     "produto-extintores.jpg","produto-hidrantes.jpg","produto-alarmes.jpg","produto-sinalizacao.jpg","produto-iluminacao.jpg","produto-acessorios.jpg",
@@ -170,12 +176,9 @@ if (window.matchMedia("(max-width: 640px)").matches) {
   document.querySelectorAll("img[src]").forEach(img => {
     const original = img.getAttribute("src") || "";
     const fileName = original.split("/").pop().split("?")[0];
-    if (localImageNames.has(fileName)) {
-      img.src = rawBase + encodeURIComponent(fileName);
-    }
+    if (localImageNames.has(fileName)) img.src = rawBase + encodeURIComponent(fileName);
   });
 
-  // Fundos fotográficos do banner de Serviços.
   const imageSourceFix = document.createElement("style");
   imageSourceFix.id = "mobile-image-source-fix";
   imageSourceFix.textContent = `
@@ -184,37 +187,16 @@ if (window.matchMedia("(max-width: 640px)").matches) {
   `;
   document.head.appendChild(imageSourceFix);
 
-  // Nomes dos cards de Produtos e Serviços no smartphone.
-  // Usa o figcaption que já existe no HTML e o posiciona SOBRE a foto,
-  // exatamente como o card Extintores, sem editar nenhuma imagem.
   const catalogNamesFix = document.createElement("style");
   catalogNamesFix.id = "mobile-catalog-names-fix";
   catalogNamesFix.textContent = `
-    #solucoes .catalog-mini-grid figure{
-      position:relative !important;
-      overflow:hidden !important;
-    }
+    #solucoes .catalog-mini-grid figure{ position:relative !important; overflow:hidden !important; }
     #solucoes .catalog-mini-grid figure figcaption{
-      display:block !important;
-      position:absolute !important;
-      left:0 !important;
-      right:0 !important;
-      bottom:0 !important;
-      z-index:20 !important;
-      margin:0 !important;
-      padding:6px 8px !important;
-      box-sizing:border-box !important;
-      background:rgba(0,0,0,.78) !important;
-      color:#fff !important;
-      font-family:"Barlow Condensed",Inter,Arial,sans-serif !important;
-      font-weight:800 !important;
-      font-size:clamp(10px,3vw,14px) !important;
-      line-height:1.05 !important;
-      text-transform:uppercase !important;
-      text-align:left !important;
-      opacity:1 !important;
-      visibility:visible !important;
-      pointer-events:none !important;
+      display:block !important; position:absolute !important; left:0 !important; right:0 !important; bottom:0 !important;
+      z-index:20 !important; margin:0 !important; padding:6px 8px !important; box-sizing:border-box !important;
+      background:rgba(0,0,0,.78) !important; color:#fff !important; font-family:"Barlow Condensed",Inter,Arial,sans-serif !important;
+      font-weight:800 !important; font-size:clamp(10px,3vw,14px) !important; line-height:1.05 !important;
+      text-transform:uppercase !important; text-align:left !important; opacity:1 !important; visibility:visible !important; pointer-events:none !important;
     }
   `;
   document.head.appendChild(catalogNamesFix);
