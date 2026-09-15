@@ -134,7 +134,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 // Correção isolada: Trabalhe Conosco no smartphone.
-// Injetada por JS para não alterar o layout desktop nem as demais seções mobile.
 if (window.matchMedia("(max-width: 640px)").matches) {
   const jobsMobileFix = document.createElement("style");
   jobsMobileFix.id = "jobs-mobile-width-fix";
@@ -150,46 +149,38 @@ if (window.matchMedia("(max-width: 640px)").matches) {
       gap: 24px !important;
       min-width: 0 !important;
     }
-    #trabalhe .jobs-grid > * {
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-    }
-    #trabalhe .jobs-form {
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-      padding: 18px !important;
-      overflow: hidden !important;
-      box-sizing: border-box !important;
-    }
-    #trabalhe .jobs-form input,
-    #trabalhe .jobs-form select,
-    #trabalhe .jobs-form button {
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-      box-sizing: border-box !important;
-    }
-    #trabalhe .file-label {
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-      display: grid !important;
-      grid-template-columns: minmax(0, 1fr) !important;
-      gap: 8px !important;
-      align-items: start !important;
-      overflow: hidden !important;
-      box-sizing: border-box !important;
-    }
-    #trabalhe .file-label input[type="file"] {
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 0 !important;
-      padding: 0 !important;
-      font-size: .78rem !important;
-      overflow: hidden !important;
-    }
+    #trabalhe .jobs-grid > * { width:100% !important; max-width:100% !important; min-width:0 !important; }
+    #trabalhe .jobs-form { width:100% !important; max-width:100% !important; min-width:0 !important; padding:18px !important; overflow:hidden !important; box-sizing:border-box !important; }
+    #trabalhe .jobs-form input, #trabalhe .jobs-form select, #trabalhe .jobs-form button { width:100% !important; max-width:100% !important; min-width:0 !important; box-sizing:border-box !important; }
+    #trabalhe .file-label { width:100% !important; max-width:100% !important; min-width:0 !important; display:grid !important; grid-template-columns:minmax(0,1fr) !important; gap:8px !important; align-items:start !important; overflow:hidden !important; box-sizing:border-box !important; }
+    #trabalhe .file-label input[type="file"] { width:100% !important; max-width:100% !important; min-width:0 !important; padding:0 !important; font-size:.78rem !important; overflow:hidden !important; }
   `;
   document.head.appendChild(jobsMobileFix);
+
+  // As imagens existem no repositório, mas alguns navegadores móveis não estavam
+  // resolvendo corretamente os caminhos relativos publicados pelo GitHub Pages.
+  // No smartphone, usa a origem RAW do próprio repositório como fonte confiável.
+  const rawBase = "https://raw.githubusercontent.com/Comandofire/comando-fire/main/";
+  const localImageNames = new Set([
+    "produto-extintores.jpg","produto-hidrantes.jpg","produto-alarmes.jpg","produto-sinalizacao.jpg","produto-iluminacao.jpg","produto-acessorios.jpg",
+    "servico-bombeiro.jpg","servico-treinamento.jpg","servico-piscina.jpg","servico-bvi.jpg","servico-manutencao.jpg","servico-projetos.jpg",
+    "arteirinhos.jpg","atento-est.jpg","festival-nordeste.jpg","firjan.jpg","ibc.jpg","le-eventos.jpg","logo-preto-laranja.jpg","nova-iguacu.jpg","pier-maua.jpg","rio-cultura.jpg","rio-saude.jpg","rock-festival.jpg","sao-pedro-panoramasat.jpg","sesc-alpina.jpg","sesc-ginastico.jpg","sesc-grussai.jpg","sesc-teresopolis.jpg","sesc.jpg","sesi.jpg","tres-rios.jpg","america-rj.jpg"
+  ]);
+
+  document.querySelectorAll("img[src]").forEach(img => {
+    const original = img.getAttribute("src") || "";
+    const fileName = original.split("/").pop().split("?")[0];
+    if (localImageNames.has(fileName)) {
+      img.src = rawBase + encodeURIComponent(fileName);
+    }
+  });
+
+  // Fundos fotográficos do banner de Serviços.
+  const imageSourceFix = document.createElement("style");
+  imageSourceFix.id = "mobile-image-source-fix";
+  imageSourceFix.textContent = `
+    .service-photo-left{background-image:url("${rawBase}servico-bombeiro.jpg") !important;}
+    .service-photo-right{background-image:url("${rawBase}produto-extintores.jpg") !important;}
+  `;
+  document.head.appendChild(imageSourceFix);
 }
