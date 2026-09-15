@@ -183,4 +183,39 @@ if (window.matchMedia("(max-width: 640px)").matches) {
     .service-photo-right{background-image:url("${rawBase}produto-extintores.jpg") !important;}
   `;
   document.head.appendChild(imageSourceFix);
+
+  // Nomes dos cards de Produtos e Serviços no smartphone.
+  // Usa o figcaption que já existe no HTML e o posiciona SOBRE a foto,
+  // exatamente como o card Extintores, sem editar nenhuma imagem.
+  const catalogNamesFix = document.createElement("style");
+  catalogNamesFix.id = "mobile-catalog-names-fix";
+  catalogNamesFix.textContent = `
+    #solucoes .catalog-mini-grid figure{
+      position:relative !important;
+      overflow:hidden !important;
+    }
+    #solucoes .catalog-mini-grid figure figcaption{
+      display:block !important;
+      position:absolute !important;
+      left:0 !important;
+      right:0 !important;
+      bottom:0 !important;
+      z-index:20 !important;
+      margin:0 !important;
+      padding:6px 8px !important;
+      box-sizing:border-box !important;
+      background:rgba(0,0,0,.78) !important;
+      color:#fff !important;
+      font-family:"Barlow Condensed",Inter,Arial,sans-serif !important;
+      font-weight:800 !important;
+      font-size:clamp(10px,3vw,14px) !important;
+      line-height:1.05 !important;
+      text-transform:uppercase !important;
+      text-align:left !important;
+      opacity:1 !important;
+      visibility:visible !important;
+      pointer-events:none !important;
+    }
+  `;
+  document.head.appendChild(catalogNamesFix);
 }
