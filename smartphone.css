@@ -2631,3 +2631,37 @@ html, body{
   margin:0 !important;
   padding:0 !important;
 }
+
+
+/* ===== GALERIA EMPILHADA INTERATIVA — SMARTPHONE ===== */
+#galeria .gallery-stack{margin-bottom:34px !important;}
+#galeria .gallery-photo-stack{
+  position:relative !important;
+  width:88% !important;
+  height:auto !important;
+  aspect-ratio:4 / 3 !important;
+  margin:18px auto 26px !important;
+  outline:none !important;
+}
+#galeria .gallery-photo-stack figure{
+  position:absolute !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  margin:0 !important;
+  overflow:hidden !important;
+  border-radius:10px !important;
+  background:#111 !important;
+  box-shadow:0 10px 25px rgba(0,0,0,.35) !important;
+  transition:transform .32s ease !important;
+}
+#galeria .gallery-photo-stack .photo-1{z-index:3 !important;transform:translate(0,0) rotate(0) !important;}
+#galeria .gallery-photo-stack .photo-2{z-index:2 !important;transform:translate(9px,7px) rotate(1.2deg) !important;}
+#galeria .gallery-photo-stack .photo-3{z-index:1 !important;transform:translate(18px,14px) rotate(2.3deg) !important;}
+#galeria .gallery-photo-stack img{
+  display:block !important;width:100% !important;height:100% !important;
+  object-fit:cover !important;object-position:center !important;
+}
+#galeria .gallery-photo-stack:focus .photo-1{transform:translateX(-13%) rotate(-2.5deg) !important;}
+#galeria .gallery-photo-stack:focus .photo-2{transform:translateX(0) rotate(0) !important;}
+#galeria .gallery-photo-stack:focus .photo-3{transform:translateX(13%) rotate(2.5deg) !important;}
