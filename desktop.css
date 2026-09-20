@@ -3324,3 +3324,36 @@ body{
 #galeria .gallery-photo-stack:focus .photo-2{transform:translateX(0) rotate(0);}
 #galeria .gallery-photo-stack:hover .photo-3,
 #galeria .gallery-photo-stack:focus .photo-3{transform:translateX(36%) rotate(3deg);}
+
+
+/* ===== GALERIA MOSAICO — DESKTOP (substitui pilhas) ===== */
+#galeria .gallery-showcase{margin:0 0 46px !important;}
+#galeria .gallery-showcase-grid{
+  display:grid !important;
+  grid-template-columns:1.7fr 1fr !important;
+  grid-template-rows:repeat(2,190px) !important;
+  gap:12px !important;
+  width:100% !important;
+  height:auto !important;
+  margin:16px 0 0 !important;
+}
+#galeria .gallery-showcase-grid figure{
+  position:relative !important;
+  inset:auto !important;
+  width:100% !important;
+  height:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  transform:none !important;
+  overflow:hidden !important;
+  border-radius:12px !important;
+  background:#111 !important;
+  box-shadow:0 10px 28px rgba(0,0,0,.25) !important;
+}
+#galeria .gallery-showcase-grid .gallery-featured{grid-row:1 / 3 !important;}
+#galeria .gallery-showcase-grid img{
+  display:block !important;width:100% !important;height:100% !important;
+  object-fit:cover !important;object-position:center !important;
+  transition:transform .35s ease !important;
+}
+#galeria .gallery-showcase-grid figure:hover img{transform:scale(1.035) !important;}
