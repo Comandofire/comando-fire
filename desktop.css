@@ -3291,3 +3291,36 @@ body{
 @media(min-width:641px) and (max-width:1000px){
   #galeria .gallery-photo-grid figure{height:220px;}
 }
+
+
+/* ===== GALERIA EMPILHADA INTERATIVA — DESKTOP ===== */
+#galeria .gallery-stack{margin-bottom:48px;}
+#galeria .gallery-photo-stack{
+  position:relative;
+  width:min(820px,78%);
+  height:430px;
+  margin:22px auto 0;
+  outline:none;
+}
+#galeria .gallery-photo-stack figure{
+  position:absolute;
+  inset:0;
+  margin:0;
+  overflow:hidden;
+  border-radius:14px;
+  background:#111;
+  box-shadow:0 16px 38px rgba(0,0,0,.38);
+  transition:transform .38s ease,opacity .38s ease;
+}
+#galeria .gallery-photo-stack .photo-1{z-index:3;transform:translate(0,0) rotate(0);}
+#galeria .gallery-photo-stack .photo-2{z-index:2;transform:translate(18px,10px) rotate(1.2deg);}
+#galeria .gallery-photo-stack .photo-3{z-index:1;transform:translate(36px,20px) rotate(2.4deg);}
+#galeria .gallery-photo-stack img{
+  display:block;width:100%;height:100%;object-fit:cover;object-position:center;
+}
+#galeria .gallery-photo-stack:hover .photo-1,
+#galeria .gallery-photo-stack:focus .photo-1{transform:translateX(-36%) rotate(-3deg);}
+#galeria .gallery-photo-stack:hover .photo-2,
+#galeria .gallery-photo-stack:focus .photo-2{transform:translateX(0) rotate(0);}
+#galeria .gallery-photo-stack:hover .photo-3,
+#galeria .gallery-photo-stack:focus .photo-3{transform:translateX(36%) rotate(3deg);}
