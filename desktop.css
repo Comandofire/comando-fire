@@ -3357,3 +3357,21 @@ body{
   transition:transform .35s ease !important;
 }
 #galeria .gallery-showcase-grid figure:hover img{transform:scale(1.035) !important;}
+
+
+/* ===== GALERIA: FOTO PRINCIPAL + CARROSSEL NO HOVER ===== */
+#galeria .gallery-carousel-card{margin:0 0 52px !important;}
+#galeria .gallery-carousel{width:min(920px,82%);margin:16px auto 0;transition:width .35s ease,transform .35s ease;}
+#galeria .gallery-carousel-card:hover .gallery-carousel{width:min(1080px,94%);transform:translateY(-4px);}
+#galeria .gallery-carousel-viewport{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:14px;background:#111;box-shadow:0 14px 38px rgba(0,0,0,.35);}
+#galeria .gallery-carousel-slide{position:absolute !important;inset:0 !important;margin:0 !important;width:100% !important;height:100% !important;opacity:0;visibility:hidden;transform:none !important;transition:opacity .35s ease;}
+#galeria .gallery-carousel-slide.active{opacity:1;visibility:visible;z-index:2;}
+#galeria .gallery-carousel-slide img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;}
+#galeria .gallery-carousel-arrow{position:absolute;top:50%;transform:translateY(-50%) scale(.85);z-index:8;width:48px;height:48px;border:1px solid rgba(255,255,255,.45);border-radius:50%;background:rgba(0,0,0,.62);color:#fff;font-size:32px;line-height:1;opacity:0;pointer-events:none;transition:.25s ease;cursor:pointer;}
+#galeria .gallery-carousel-arrow.prev{left:18px;} #galeria .gallery-carousel-arrow.next{right:18px;}
+#galeria .gallery-carousel-dots{position:absolute;left:50%;bottom:15px;transform:translateX(-50%);z-index:8;display:flex;gap:8px;opacity:0;transition:.25s ease;}
+#galeria .gallery-carousel-dots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;}
+#galeria .gallery-carousel-dots button.active{background:#FF5500;transform:scale(1.2);}
+#galeria .gallery-carousel-card:hover .gallery-carousel-arrow,#galeria .gallery-carousel-card:hover .gallery-carousel-dots{opacity:1;pointer-events:auto;}
+#galeria .gallery-carousel-card:hover .gallery-carousel-arrow{transform:translateY(-50%) scale(1);}
+#galeria .gallery-carousel-hint{display:block;margin-top:9px;text-align:center;color:#aaa;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;}
