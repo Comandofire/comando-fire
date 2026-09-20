@@ -24,3 +24,29 @@ const gallerySection=document.getElementById("galeria");if(gallerySection){const
 const galleryVisualFix=document.createElement("style");galleryVisualFix.id="gallery-title-white-fix";galleryVisualFix.textContent=`#galeria.gallery .section-header h2,#galeria .section-header h2{color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important}#galeria .section-header>p{display:none!important}`;document.head.appendChild(galleryVisualFix);
 
 if(window.matchMedia("(max-width: 640px)").matches){const jobsMobileFix=document.createElement("style");jobsMobileFix.id="jobs-mobile-width-fix";jobsMobileFix.textContent=`#trabalhe.jobs{overflow:hidden!important}#trabalhe .container.jobs-grid{width:calc(100% - 32px)!important;max-width:calc(100% - 32px)!important;margin-left:auto!important;margin-right:auto!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:24px!important;min-width:0!important}#trabalhe .jobs-grid>*{width:100%!important;max-width:100%!important;min-width:0!important}#trabalhe .jobs-form{width:100%!important;max-width:100%!important;min-width:0!important;padding:18px!important;overflow:hidden!important;box-sizing:border-box!important}#trabalhe .jobs-form input,#trabalhe .jobs-form select,#trabalhe .jobs-form button{width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important}#trabalhe .file-label{width:100%!important;max-width:100%!important;min-width:0!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:8px!important;align-items:start!important;overflow:hidden!important;box-sizing:border-box!important}#trabalhe .file-label input[type="file"]{width:100%!important;max-width:100%!important;min-width:0!important;padding:0!important;font-size:.78rem!important;overflow:hidden!important}`;document.head.appendChild(jobsMobileFix);const rawBase="https://raw.githubusercontent.com/Comandofire/comando-fire/main/",localImageNames=new Set(["produto-extintores.jpg","produto-hidrantes.jpg","produto-alarmes.jpg","produto-sinalizacao.jpg","produto-iluminacao.jpg","produto-acessorios.jpg","servico-bombeiro.jpg","servico-treinamento.jpg","servico-piscina.jpg","servico-bvi.jpg","servico-manutencao.jpg","servico-projetos.jpg","arteirinhos.jpg","atento-est.jpg","festival-nordeste.jpg","firjan.jpg","ibc.jpg","le-eventos.jpg","logo-preto-laranja.jpg","nova-iguacu.jpg","pier-maua.jpg","rio-cultura.jpg","rio-saude.jpg","rock-festival.jpg","sao-pedro-panoramasat.jpg","sesc-alpina.jpg","sesc-ginastico.jpg","sesc-grussai.jpg","sesc-teresopolis.jpg","sesc.jpg","sesi.jpg","tres-rios.jpg","america-rj.jpg"]);document.querySelectorAll("img[src]").forEach(img=>{const original=img.getAttribute("src")||"",fileName=original.split("/").pop().split("?")[0];if(localImageNames.has(fileName))img.src=rawBase+encodeURIComponent(fileName)});const imageSourceFix=document.createElement("style");imageSourceFix.id="mobile-image-source-fix";imageSourceFix.textContent=`.service-photo-left{background-image:url("${rawBase}servico-bombeiro.jpg")!important}.service-photo-right{background-image:url("${rawBase}produto-extintores.jpg")!important}`;document.head.appendChild(imageSourceFix);const catalogNamesFix=document.createElement("style");catalogNamesFix.id="mobile-catalog-names-fix";catalogNamesFix.textContent=`#solucoes .catalog-mini-grid figure{position:relative!important;overflow:hidden!important}#solucoes .catalog-mini-grid figure figcaption{display:block!important;position:absolute!important;left:0!important;right:0!important;bottom:0!important;z-index:20!important;margin:0!important;padding:6px 8px!important;box-sizing:border-box!important;background:rgba(0,0,0,.78)!important;color:#fff!important;font-family:"Barlow Condensed",Inter,Arial,sans-serif!important;font-weight:800!important;font-size:clamp(10px,3vw,14px)!important;line-height:1.05!important;text-transform:uppercase!important;text-align:left!important;opacity:1!important;visibility:visible!important;pointer-events:none!important}`;document.head.appendChild(catalogNamesFix)}
+
+/* Galeria: carrossel individual por categoria */
+document.querySelectorAll('[data-gallery-carousel]').forEach(card=>{
+  const slides=[...card.querySelectorAll('.gallery-carousel-slide')];
+  const dots=[...card.querySelectorAll('.gallery-carousel-dots button')];
+  const prev=card.querySelector('.gallery-carousel-arrow.prev');
+  const next=card.querySelector('.gallery-carousel-arrow.next');
+  let current=0;
+  const show=i=>{
+    current=(i+slides.length)%slides.length;
+    slides.forEach((slide,n)=>slide.classList.toggle('active',n===current));
+    dots.forEach((dot,n)=>dot.classList.toggle('active',n===current));
+  };
+  prev?.addEventListener('click',e=>{e.preventDefault();show(current-1);});
+  next?.addEventListener('click',e=>{e.preventDefault();show(current+1);});
+  dots.forEach((dot,n)=>dot.addEventListener('click',e=>{e.preventDefault();show(n);}));
+  let touchX=null;
+  card.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:true});
+  card.addEventListener('touchend',e=>{
+    if(touchX===null)return;
+    const dx=e.changedTouches[0].clientX-touchX;
+    if(Math.abs(dx)>45)show(current+(dx<0?1:-1));
+    touchX=null;
+  },{passive:true});
+  show(0);
+});
