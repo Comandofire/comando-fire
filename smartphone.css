@@ -2665,3 +2665,40 @@ html, body{
 #galeria .gallery-photo-stack:focus .photo-1{transform:translateX(-13%) rotate(-2.5deg) !important;}
 #galeria .gallery-photo-stack:focus .photo-2{transform:translateX(0) rotate(0) !important;}
 #galeria .gallery-photo-stack:focus .photo-3{transform:translateX(13%) rotate(2.5deg) !important;}
+
+
+/* ===== GALERIA MOSAICO — SMARTPHONE (substitui pilhas) ===== */
+#galeria .gallery-showcase{margin:0 0 30px !important;}
+#galeria .gallery-showcase-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  grid-template-rows:auto !important;
+  gap:8px !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  margin:12px 0 0 !important;
+}
+#galeria .gallery-showcase-grid figure{
+  position:relative !important;
+  inset:auto !important;
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:4 / 3 !important;
+  margin:0 !important;
+  padding:0 !important;
+  transform:none !important;
+  overflow:hidden !important;
+  border-radius:8px !important;
+  box-shadow:none !important;
+}
+#galeria .gallery-showcase-grid .gallery-featured{
+  grid-column:1 / -1 !important;
+  grid-row:auto !important;
+  aspect-ratio:16 / 10 !important;
+}
+#galeria .gallery-showcase-grid img{
+  display:block !important;width:100% !important;height:100% !important;
+  object-fit:cover !important;object-position:center !important;
+  transform:none !important;
+}
