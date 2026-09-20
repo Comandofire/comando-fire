@@ -2585,3 +2585,49 @@ html, body{
   box-sizing:border-box !important;
 }
 
+
+
+/* ===== GALERIA REAL — SMARTPHONE ===== */
+#galeria .section-header h2{color:#fff !important;}
+#galeria .gallery-category{
+  width:100% !important;
+  margin:0 0 28px !important;
+}
+#galeria .gallery-category h3{
+  margin:0 0 10px !important;
+  padding-left:9px !important;
+  border-left:4px solid #FF5500 !important;
+  color:#fff !important;
+  font-family:"Barlow Condensed",sans-serif !important;
+  font-size:1.45rem !important;
+  line-height:1 !important;
+  font-weight:800 !important;
+  text-transform:uppercase !important;
+}
+#galeria .gallery-photo-grid{
+  width:100% !important;
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:10px !important;
+}
+#galeria .gallery-photo-grid figure{
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:4 / 3 !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  border-radius:8px !important;
+  background:#111 !important;
+  box-sizing:border-box !important;
+}
+#galeria .gallery-photo-grid img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  object-fit:cover !important;
+  object-position:center !important;
+  margin:0 !important;
+  padding:0 !important;
+}
