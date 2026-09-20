@@ -2702,3 +2702,18 @@ html, body{
   object-fit:cover !important;object-position:center !important;
   transform:none !important;
 }
+
+
+/* ===== GALERIA CARROSSEL — SMARTPHONE ===== */
+#galeria .gallery-carousel-card{margin:0 0 32px !important;}
+#galeria .gallery-carousel{width:100% !important;margin:12px 0 0 !important;transform:none !important;}
+#galeria .gallery-carousel-viewport{position:relative !important;width:100% !important;height:auto !important;aspect-ratio:4/3 !important;overflow:hidden !important;border-radius:10px !important;background:#111 !important;}
+#galeria .gallery-carousel-slide{position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;margin:0 !important;opacity:0 !important;visibility:hidden !important;transform:none !important;}
+#galeria .gallery-carousel-slide.active{opacity:1 !important;visibility:visible !important;z-index:2 !important;}
+#galeria .gallery-carousel-slide img{display:block !important;width:100% !important;height:100% !important;object-fit:cover !important;object-position:center !important;}
+#galeria .gallery-carousel-arrow{position:absolute !important;top:50% !important;transform:translateY(-50%) !important;z-index:8 !important;width:38px !important;height:38px !important;border:0 !important;border-radius:50% !important;background:rgba(0,0,0,.62) !important;color:#fff !important;font-size:26px !important;opacity:1 !important;pointer-events:auto !important;}
+#galeria .gallery-carousel-arrow.prev{left:8px !important;} #galeria .gallery-carousel-arrow.next{right:8px !important;}
+#galeria .gallery-carousel-dots{position:absolute !important;left:50% !important;bottom:9px !important;transform:translateX(-50%) !important;z-index:8 !important;display:flex !important;gap:7px !important;opacity:1 !important;}
+#galeria .gallery-carousel-dots button{width:8px !important;height:8px !important;padding:0 !important;border:0 !important;border-radius:50% !important;background:rgba(255,255,255,.6) !important;}
+#galeria .gallery-carousel-dots button.active{background:#FF5500 !important;}
+#galeria .gallery-carousel-hint{display:none !important;}
